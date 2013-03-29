@@ -1,4 +1,4 @@
-var test = require('tap').test;
+var test = require('tape'); // require('tap').test; // tape works in browserify, tap works in node 0.10
 var keys = require('./index.js').shim;
 
 test('works', function (t) {
