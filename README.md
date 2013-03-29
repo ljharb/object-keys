@@ -20,3 +20,6 @@ assert.equal(keys(obj), ['a', 'b', 'c']);
 
 ## Source
 Implementation taken directly from https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js#L542-589
+
+## Tests
+Tests currently use tape - which doesn't work in node 0.10, but works in browserify. Rest assured, they pass.
