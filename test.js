@@ -18,6 +18,7 @@ test('works', function (t) {
 		st.plan(1);
 		st.deepEqual(keys(obj), objKeys, 'Object has expected keys');
 	});
+	t.end();
 });
 
 test('works with an object instance', function (t) {
