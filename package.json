@@ -24,16 +24,16 @@
 	"testling": {
 		"files": "test/index.js",
 		"browsers": [
-			"ie/6..latest",
-			"firefox/3..latest",
+			"iexplore/6.0..latest",
+			"firefox/3.0..latest",
 			"firefox/nightly",
-			"chrome/4..latest",
+			"chrome/4.0..latest",
 			"chrome/canary",
-			"opera/10..latest",
+			"opera/10.0..latest",
 			"opera/next",
-			"safari/5..latest",
-			"ipad/6..latest",
-			"iphone/6..latest"
+			"safari/5.0.5..latest",
+			"ipad/6.0..latest",
+			"iphone/6.0..latest"
 		]
 	}
 }
