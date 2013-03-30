@@ -1,5 +1,6 @@
 var test = require('tape'); // require('tap').test; // tape works in browserify, tap works in node 0.10
-var keys = require('./index.js').shim;
+var shimmedKeys = require('./index.js');
+var keys = require('./shim.js');
 
 test('works', function (t) {
 	var obj = {
@@ -8,6 +9,15 @@ test('works', function (t) {
 		c: true
 	};
 	var objKeys = ['a', 'b', 'c'];
+
+	t.test('exports a function', function (st) {
+		st.plan(1);
+		if (Object.keys) {
+			st.equal(Object.keys, shimmedKeys, 'Object.keys is supported and exported');
+		} else {
+			st.equal(keys, shimmedKeys, 'Object.keys is not supported; shim is exported');
+		}
+	});
 
 	t.test('working with actual shim', function (st) {
 		st.plan(1);
