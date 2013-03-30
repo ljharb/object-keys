@@ -8,7 +8,16 @@ test('works', function (t) {
 		b: true,
 		c: true
 	};
-	var objKeys = ['a', 'b', 'c'];
+	var obj = {
+		"str": "boz",
+		"obj": {},
+		"arr": [],
+		"bool": true,
+		"num": 42,
+		"null": null,
+		"undefined": undefined
+	};
+	var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'null', 'undefined'];
 
 	t.test('exports a function', function (st) {
 		st.plan(1);
@@ -25,18 +34,47 @@ test('works', function (t) {
 	});
 
 	t.test('works with an object literal', function (st) {
+		st.plan(2);
+		var theKeys = keys(obj);
+		st.equal(Array.isArray(theKeys), true, 'returns an array');
+		st.deepEqual(theKeys, objKeys, 'Object has expected keys');
+	});
+
+	t.test('returns names which are own properties', function (st) {
+		keys(obj).forEach(function (name) {
+			st.equal(obj.hasOwnProperty(name), true);
+		});
+		st.end();
+	});
+
+	t.test('returns names which are enumerable', function (st) {
+		var loopedValues = [];
+		for (var k in obj) {
+			loopedValues.push(k);
+		}
+		keys(obj).forEach(function (name) {
+			st.notEqual(loopedValues.indexOf(name), -1, name + ' is not enumerable');
+		});
+		st.end();
+	});
+
+	t.test('throws an error for a non-object', function (st) {
 		st.plan(1);
-		st.deepEqual(keys(obj), objKeys, 'Object has expected keys');
+		st.throws(function () {
+			return keys(42);
+		}, new RangeError(), 'throws on a non-object');
 	});
 	t.end();
 });
 
 test('works with an object instance', function (t) {
-	t.plan(1);
+	t.plan(2);
 	var Prototype = function () {};
 	Prototype.prototype.foo = true;
 	var obj = new Prototype();
 	obj.bar = true;
-	t.deepEqual(keys(obj), ['bar'], 'Instance has expected keys');
+	var theKeys = keys(obj);
+	t.equal(Array.isArray(theKeys), true, 'returns an array');
+	t.deepEqual(theKeys, ['bar'], 'Instance has expected keys');
 });
 
