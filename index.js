@@ -1,4 +1,3 @@
-
 // modified from https://github.com/kriskowal/es5-shim
 var has = Object.prototype.hasOwnProperty,
 	hasDontEnumBug = true,
@@ -37,8 +36,5 @@ var keysShim = function keys(object) {
 	return keys;
 };
 
-module.exports = {
-	keys: Object.keys || keysShim,
-	shim: keysShim
-};
+module.exports = Object.keys || keysShim
 
