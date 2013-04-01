@@ -19,6 +19,7 @@
 		"shim"
 	],
 	"dependencies": {
+		"indexof": "~0.0.1",
 		"is-extended": "~0.0.4"
 	},
 	"devDependencies": {

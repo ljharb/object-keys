@@ -3,6 +3,7 @@ var shimmedKeys = require('./index.js');
 var is = require('is-extended');
 var keys = require('./shim.js');
 var forEach = require('./shim-foreach.js');
+var indexOf = require('indexof');
 
 test('works', function (t) {
 	var obj = {
@@ -50,7 +51,7 @@ test('works', function (t) {
 			loopedValues.push(k);
 		}
 		forEach(keys(obj), function (name) {
-			st.notEqual(loopedValues.indexOf(name), -1, name + ' is not enumerable');
+			st.notEqual(indexOf(loopedValues, name), -1, name + ' is not enumerable');
 		});
 		st.end();
 	});
