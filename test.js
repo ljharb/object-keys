@@ -16,24 +16,24 @@ test('works', function (t) {
 	var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'null', 'undefined'];
 
 	t.test('exports a function', function (st) {
-		st.plan(1);
 		if (Object.keys) {
 			st.equal(Object.keys, shimmedKeys, 'Object.keys is supported and exported');
 		} else {
 			st.equal(keys, shimmedKeys, 'Object.keys is not supported; shim is exported');
 		}
+		st.end();
 	});
 
 	t.test('working with actual shim', function (st) {
-		st.plan(1);
 		st.notEqual(Object.keys, keys, 'keys shim is not native Object.keys');
+		st.end();
 	});
 
 	t.test('works with an object literal', function (st) {
-		st.plan(2);
 		var theKeys = keys(obj);
 		st.equal(is.isArray(theKeys), true, 'returns an array');
 		st.deepEqual(theKeys, objKeys, 'Object has expected keys');
+		st.end();
 	});
 
 	t.test('returns names which are own properties', function (st) {
@@ -55,10 +55,10 @@ test('works', function (t) {
 	});
 
 	t.test('throws an error for a non-object', function (st) {
-		st.plan(1);
 		st.throws(function () {
 			return keys(42);
-		}, new RangeError(), 'throws on a non-object');
+		}, RangeError, 'throws on a non-object');
+		st.end();
 	});
 	t.end();
 });
