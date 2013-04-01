@@ -68,7 +68,6 @@ test('works', function (t) {
 });
 
 test('works with an object instance', function (t) {
-	t.plan(2);
 	var Prototype = function () {};
 	Prototype.prototype.foo = true;
 	var obj = new Prototype();
@@ -76,5 +75,6 @@ test('works with an object instance', function (t) {
 	var theKeys = keys(obj);
 	t.equal(Array.isArray(theKeys), true, 'returns an array');
 	t.deepEqual(theKeys, ['bar'], 'Instance has expected keys');
+	t.end();
 });
 
