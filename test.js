@@ -4,11 +4,6 @@ var keys = require('./shim.js');
 
 test('works', function (t) {
 	var obj = {
-		a: true,
-		b: true,
-		c: true
-	};
-	var obj = {
 		"str": "boz",
 		"obj": {},
 		"arr": [],
