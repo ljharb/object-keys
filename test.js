@@ -1,5 +1,6 @@
 var test = require('tape'); // require('tap').test; // tape works in browserify, tap works in node 0.10
 var shimmedKeys = require('./index.js');
+var is = require('is-extended');
 var keys = require('./shim.js');
 
 test('works', function (t) {
@@ -31,7 +32,7 @@ test('works', function (t) {
 	t.test('works with an object literal', function (st) {
 		st.plan(2);
 		var theKeys = keys(obj);
-		st.equal(Array.isArray(theKeys), true, 'returns an array');
+		st.equal(is.isArray(theKeys), true, 'returns an array');
 		st.deepEqual(theKeys, objKeys, 'Object has expected keys');
 	});
 
@@ -68,7 +69,7 @@ test('works with an object instance', function (t) {
 	var obj = new Prototype();
 	obj.bar = true;
 	var theKeys = keys(obj);
-	t.equal(Array.isArray(theKeys), true, 'returns an array');
+	t.equal(is.isArray(theKeys), true, 'returns an array');
 	t.deepEqual(theKeys, ['bar'], 'Instance has expected keys');
 	t.end();
 });
