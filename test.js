@@ -2,6 +2,7 @@ var test = require('tape'); // require('tap').test; // tape works in browserify,
 var shimmedKeys = require('./index.js');
 var is = require('is-extended');
 var keys = require('./shim.js');
+var forEach = require('./shim-foreach.js');
 
 test('works', function (t) {
 	var obj = {
@@ -37,7 +38,7 @@ test('works', function (t) {
 	});
 
 	t.test('returns names which are own properties', function (st) {
-		keys(obj).forEach(function (name) {
+		forEach(keys(obj), function (name) {
 			st.equal(obj.hasOwnProperty(name), true);
 		});
 		st.end();
@@ -48,7 +49,7 @@ test('works', function (t) {
 		for (k in obj) {
 			loopedValues.push(k);
 		}
-		keys(obj).forEach(function (name) {
+		forEach(keys(obj), function (name) {
 			st.notEqual(loopedValues.indexOf(name), -1, name + ' is not enumerable');
 		});
 		st.end();

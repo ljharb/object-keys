@@ -4,6 +4,7 @@
 	// modified from https://github.com/kriskowal/es5-shim
 	var has = Object.prototype.hasOwnProperty,
 		is = require('is-extended'),
+		forEach = require('./shim-foreach.js'),
 		hasDontEnumBug = true,
 		dontEnums = [
 			"toString",
@@ -14,7 +15,6 @@
 			"propertyIsEnumerable",
 			"constructor"
 		],
-		dontEnumsLength = dontEnums.length,
 		key, keysShim;
 	for (key in {"toString": null}) { hasDontEnumBug = false; }
 
@@ -23,7 +23,7 @@
 			throw new TypeError("Object.keys called on a non-object");
 		}
 
-		var i, ii, name, theKeys = [];
+		var name, theKeys = [];
 		for (name in object) {
 			if (has.call(object, name)) {
 				theKeys.push(name);
@@ -31,12 +31,11 @@
 		}
 
 		if (hasDontEnumBug) {
-			for (i = 0, ii = dontEnumsLength; i < ii; i++) {
-				var dontEnum = dontEnums[i];
+			forEach(dontEnums, function (dontEnum) {
 				if (has.call(dontEnums, dontEnum)) {
 					theKeys.push(dontEnum);
 				}
-			}
+			});
 		}
 		return theKeys;
 	};
