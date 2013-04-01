@@ -43,8 +43,8 @@ test('works', function (t) {
 	});
 
 	t.test('returns names which are enumerable', function (st) {
-		var loopedValues = [];
-		for (var k in obj) {
+		var k, loopedValues = [];
+		for (k in obj) {
 			loopedValues.push(k);
 		}
 		keys(obj).forEach(function (name) {

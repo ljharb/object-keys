@@ -13,30 +13,31 @@
 			"propertyIsEnumerable",
 			"constructor"
 		],
-		dontEnumsLength = dontEnums.length;
-	for (var key in {"toString": null}) { hasDontEnumBug = false; }
+		dontEnumsLength = dontEnums.length,
+		key, keysShim;
+	for (key in {"toString": null}) { hasDontEnumBug = false; }
 
-	var keysShim = function keys(object) {
+	keysShim = function keys(object) {
 		if ((typeof object !== "object" && typeof object !== "function") || object === null) {
 			throw new TypeError("Object.keys called on a non-object");
 		}
 
-		var keys = [];
-		for (var name in object) {
+		var i, ii, name, theKeys = [];
+		for (name in object) {
 			if (has.call(object, name)) {
-				keys.push(name);
+				theKeys.push(name);
 			}
 		}
 
 		if (hasDontEnumBug) {
-			for (var i = 0, ii = dontEnumsLength; i < ii; i++) {
+			for (i = 0, ii = dontEnumsLength; i < ii; i++) {
 				var dontEnum = dontEnums[i];
 				if (has.call(dontEnums, dontEnum)) {
-					keys.push(dontEnum);
+					theKeys.push(dontEnum);
 				}
 			}
 		}
-		return keys;
+		return theKeys;
 	};
 
 	module.exports = keysShim;
