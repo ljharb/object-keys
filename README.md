@@ -1,5 +1,7 @@
 #object-keys
 
+[![Build Status](https://travis-ci.org/ljharb/object-keys.png)](https://travis-ci.org/ljharb/object-keys)
+
 [![browser support](https://ci.testling.com/ljharb/object-keys.png)](https://ci.testling.com/ljharb/object-keys)
 
 An Object.keys shim. Uses Object.keys if available.
