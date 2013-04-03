@@ -1,4 +1,4 @@
-#object-keys
+#object-keys <sup>[![Version Badge](http://vb.teelaun.ch/ljharb/object-keys.svg)](https://npmjs.org/package/object-keys)</sup>
 
 [![Build Status](https://travis-ci.org/ljharb/object-keys.png)](https://travis-ci.org/ljharb/object-keys)
 
