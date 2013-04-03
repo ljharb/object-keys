@@ -1,8 +1,8 @@
-#object-keys <sup>[![Version Badge](http://vb.teelaun.ch/ljharb/object-keys.svg)](https://npmjs.org/package/object-keys)</sup>
+#object-keys <sup>[![Version Badge][2]][1]</sup>
 
-[![Build Status](https://travis-ci.org/ljharb/object-keys.png)](https://travis-ci.org/ljharb/object-keys)
+[![Build Status][3]][4] [![dependency status][5]][6]
 
-[![browser support](https://ci.testling.com/ljharb/object-keys.png)](https://ci.testling.com/ljharb/object-keys)
+[![browser support][7]][8]
 
 An Object.keys shim. Uses Object.keys if available.
 
@@ -21,7 +21,18 @@ assert.equal(keys(obj), ['a', 'b', 'c']);
 ```
 
 ## Source
-Implementation taken directly from https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js#L542-589
+Implementation taken directly from [9]
 
 ## Tests
 Tests currently use tape - which doesn't work in node 0.10, but works in browserify. Rest assured, they pass.
+
+[1]: https://npmjs.org/package/object-keys
+[2]: http://vb.teelaun.ch/ljharb/object-keys.svg
+[3]: https://travis-ci.org/ljharb/object-keys.png
+[4]: https://travis-ci.org/ljharb/object-keys
+[5]: https://david-dm.org/ljharb/object-keys.png
+[6]: https://david-dm.org/ljharb/object-keys
+[7]: https://ci.testling.com/ljharb/object-keys.png
+[8]: https://ci.testling.com/ljharb/object-keys
+[9]: https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js#L542-589
+
