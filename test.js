@@ -1,6 +1,6 @@
 var test = require('tape');
 var shimmedKeys = require('./index.js');
-var is = require('is-extended');
+var is = require('is');
 var keys = require('./shim.js');
 var forEach = require('foreach');
 var indexOf = require('indexof');
@@ -33,7 +33,7 @@ test('works', function (t) {
 
 	t.test('works with an object literal', function (st) {
 		var theKeys = keys(obj);
-		st.equal(is.isArray(theKeys), true, 'returns an array');
+		st.equal(is.array(theKeys), true, 'returns an array');
 		st.deepEqual(theKeys, objKeys, 'Object has expected keys');
 		st.end();
 	});
@@ -71,7 +71,7 @@ test('works with an object instance', function (t) {
 	var obj = new Prototype();
 	obj.bar = true;
 	var theKeys = keys(obj);
-	t.equal(is.isArray(theKeys), true, 'returns an array');
+	t.equal(is.array(theKeys), true, 'returns an array');
 	t.deepEqual(theKeys, ['bar'], 'Instance has expected keys');
 	t.end();
 });
