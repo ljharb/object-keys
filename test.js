@@ -2,7 +2,7 @@ var test = require('tape');
 var shimmedKeys = require('./index.js');
 var is = require('is-extended');
 var keys = require('./shim.js');
-var forEach = require('./shim-foreach.js');
+var forEach = require('foreach');
 var indexOf = require('indexof');
 
 test('works', function (t) {

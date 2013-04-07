@@ -19,6 +19,7 @@
 		"shim"
 	],
 	"dependencies": {
+        "foreach": "~2.0.1",
 		"indexof": "~0.0.1",
 		"is-extended": "~0.0.5"
 	},

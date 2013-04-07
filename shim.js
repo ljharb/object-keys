@@ -4,7 +4,7 @@
 	// modified from https://github.com/kriskowal/es5-shim
 	var has = Object.prototype.hasOwnProperty,
 		is = require('is-extended'),
-		forEach = require('./shim-foreach.js'),
+		forEach = require('foreach'),
 		hasDontEnumBug = true,
 		dontEnums = [
 			"toString",
