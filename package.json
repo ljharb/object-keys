@@ -21,7 +21,7 @@
 	"dependencies": {
         "foreach": "~2.0.1",
 		"indexof": "~0.0.1",
-		"is": "~0.2.0"
+		"is": "~0.2.1"
 	},
 	"devDependencies": {
 		"tape": "~0.3.3"
