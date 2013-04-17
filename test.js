@@ -12,10 +12,10 @@ test('works', function (t) {
 		"arr": [],
 		"bool": true,
 		"num": 42,
-		"null": null,
+		"aNull": null,
 		"undefined": undefined
 	};
-	var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'null', 'undefined'];
+	var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'aNull', 'undefined'];
 
 	t.test('exports a function', function (st) {
 		if (Object.keys) {
