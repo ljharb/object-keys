@@ -40,7 +40,7 @@ test('works', function (t) {
 
 	t.test('returns names which are own properties', function (st) {
 		forEach(keys(obj), function (name) {
-			st.equal(obj.hasOwnProperty(name), true);
+			st.equal(obj.hasOwnProperty(name), true, name + ' should be returned');
 		});
 		st.end();
 	});
