@@ -13,9 +13,9 @@ test('works', function (t) {
 		"bool": true,
 		"num": 42,
 		"aNull": null,
-		"undefined": undefined
+		"undef": undefined
 	};
-	var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'aNull', 'undefined'];
+	var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'aNull', 'undef'];
 
 	t.test('exports a function', function (st) {
 		if (Object.keys) {
