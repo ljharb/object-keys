@@ -57,9 +57,11 @@ test('works', function (t) {
 	});
 
 	t.test('throws an error for a non-object', function (st) {
-		st.throws(function () {
-			return keys(42);
-		}, RangeError, 'throws on a non-object');
+		st.throws(
+			function () { return keys(42); },
+			new TypeError('Object.keys called on a non-object'),
+			'throws on a non-object'
+		);
 		st.end();
 	});
 	t.end();
