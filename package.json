@@ -24,7 +24,7 @@
 		"is": "~0.2.3"
 	},
 	"devDependencies": {
-		"tape": "~0.3.3"
+		"tape": "~1.0.1"
 	},
 	"testling": {
 		"files": "test.js",
