@@ -32,7 +32,7 @@
 
 		if (hasDontEnumBug) {
 			forEach(dontEnums, function (dontEnum) {
-				if (has.call(dontEnums, dontEnum)) {
+				if (has.call(object, dontEnum)) {
 					theKeys.push(dontEnum);
 				}
 			});
