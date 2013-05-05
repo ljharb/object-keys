@@ -5,7 +5,7 @@
 	var has = Object.prototype.hasOwnProperty,
 		is = require('is'),
 		forEach = require('foreach'),
-		hasDontEnumBug = true,
+		hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString'),
 		dontEnums = [
 			"toString",
 			"toLocaleString",
@@ -15,8 +15,7 @@
 			"propertyIsEnumerable",
 			"constructor"
 		],
-		key, keysShim;
-	for (key in {"toString": null}) { hasDontEnumBug = false; }
+		keysShim;
 
 	keysShim = function keys(object) {
 		if (!is.object(object)) {
