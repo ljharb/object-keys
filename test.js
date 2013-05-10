@@ -38,6 +38,14 @@ test('works', function (t) {
 		st.end();
 	});
 
+	t.test('works with an array', function (st) {
+		var arr = [1, 2, 3];
+		var theKeys = keys(arr);
+		st.equal(is.array(theKeys), true, 'returns an array');
+		st.deepEqual(theKeys, ['0', '1', '2'], 'Array has expected keys');
+		st.end();
+	});
+
 	t.test('returns names which are own properties', function (st) {
 		forEach(keys(obj), function (name) {
 			st.equal(obj.hasOwnProperty(name), true, name + ' should be returned');

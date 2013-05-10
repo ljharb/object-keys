@@ -18,7 +18,7 @@
 		keysShim;
 
 	keysShim = function keys(object) {
-		if (!is.object(object)) {
+		if (!is.object(object) && !is.array(object)) {
 			throw new TypeError("Object.keys called on a non-object");
 		}
 
