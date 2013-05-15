@@ -45,6 +45,15 @@ test('works with an array', function (t) {
 	t.end();
 });
 
+test('works with a function', function (t) {
+	var foo = function () {};
+	foo.a = true;
+
+	t.doesNotThrow(function () { return keys(foo); }, 'does not throw an error');
+	t.deepEqual(keys(foo), ['a'], 'returns expected keys');
+	t.end();
+});
+
 test('returns names which are own properties', function (t) {
 	forEach(keys(obj), function (name) {
 		t.equal(obj.hasOwnProperty(name), true, name + ' should be returned');

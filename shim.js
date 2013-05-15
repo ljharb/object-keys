@@ -3,7 +3,6 @@
 
 	// modified from https://github.com/kriskowal/es5-shim
 	var has = Object.prototype.hasOwnProperty,
-		is = require('is'),
 		forEach = require('foreach'),
 		hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString'),
 		dontEnums = [
@@ -18,7 +17,8 @@
 		keysShim;
 
 	keysShim = function keys(object) {
-		if (!is.object(object) && !is.array(object)) {
+		var type = typeof object;
+		if (object === null || (type !== 'object' && type !== 'function')) {
 			throw new TypeError("Object.keys called on a non-object");
 		}
 
