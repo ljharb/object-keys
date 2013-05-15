@@ -19,12 +19,12 @@
 		"shim"
 	],
 	"dependencies": {
-        "foreach": "~2.0.1",
-		"indexof": "~0.0.1",
-		"is": "~0.2.6"
+        "foreach": "~2.0.1"
 	},
 	"devDependencies": {
-		"tape": "~1.0.2"
+		"tape": "~1.0.2",
+		"indexof": "~0.0.1",
+		"is": "~0.2.6"
 	},
 	"testling": {
 		"files": "test.js",
