@@ -92,3 +92,12 @@ test('works with an object instance', function (t) {
 	t.end();
 });
 
+test('works in iOS 5 mobile Safari', function (t) {
+	var Foo = function () {};
+	Foo.a = function () {};
+
+	// the bug is keys(Foo) => ['a', 'prototype'] instead of ['a']
+	t.deepEqual(keys(Foo), ['a'], 'has expected keys');
+	t.end();
+});
+
