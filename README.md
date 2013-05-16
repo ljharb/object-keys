@@ -21,7 +21,7 @@ assert.equal(keys(obj), ['a', 'b', 'c']);
 ```
 
 ## Source
-Implementation taken directly from [9]
+Implementation taken directly from [9], with modifications, including from [lodash]([10]).
 
 ## Tests
 Tests currently use tape - which doesn't work in node 0.10, but works in browserify. Rest assured, they pass.
@@ -35,4 +35,5 @@ Tests currently use tape - which doesn't work in node 0.10, but works in browser
 [7]: https://ci.testling.com/ljharb/object-keys.png
 [8]: https://ci.testling.com/ljharb/object-keys
 [9]: https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js#L542-589
+[10]: https://github.com/bestiejs/lodash
 
