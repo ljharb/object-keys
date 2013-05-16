@@ -24,7 +24,7 @@ assert.equal(keys(obj), ['a', 'b', 'c']);
 Implementation taken directly from [9], with modifications, including from [lodash]([10]).
 
 ## Tests
-Tests currently use tape - which doesn't work in node 0.10, but works in browserify. Rest assured, they pass.
+Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/object-keys
 [2]: http://vb.teelaun.ch/ljharb/object-keys.svg
