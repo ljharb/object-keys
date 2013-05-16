@@ -3,8 +3,10 @@
 
 	// modified from https://github.com/kriskowal/es5-shim
 	var has = Object.prototype.hasOwnProperty,
+		is = require('is'),
 		forEach = require('foreach'),
 		hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString'),
+		hasProtoEnumBug = (function () {}).propertyIsEnumerable('prototype'),
 		dontEnums = [
 			"toString",
 			"toLocaleString",
@@ -17,15 +19,26 @@
 		keysShim;
 
 	keysShim = function keys(object) {
-		var type = typeof object;
-		if (object === null || (type !== 'object' && type !== 'function')) {
+		var isObject = object !== null && typeof object === 'object',
+			isFunction = is.fn(object),
+			isArguments = is.arguments(object),
+			theKeys = [];
+
+		if (!isObject && !isFunction && !isArguments) {
 			throw new TypeError("Object.keys called on a non-object");
 		}
 
-		var name, theKeys = [];
-		for (name in object) {
-			if (has.call(object, name)) {
-				theKeys.push(name);
+		if (isArguments) {
+			forEach(object, function (value) {
+				theKeys.push(value);
+			});
+		} else {
+			var name,
+				skipProto = hasProtoEnumBug && isFunction;
+			for (name in object) {
+				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+					theKeys.push(name);
+				}
 			}
 		}
 
