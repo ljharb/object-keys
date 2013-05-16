@@ -103,10 +103,10 @@ test('works in iOS 5 mobile Safari', function (t) {
 
 test('works in environments with the dontEnum bug (IE < 9)', function (t) {
 	var Foo = function () {};
-	Foo.a = function () {};
+	Foo.prototype.a = function () {};
 
-	// the bug is keys(Foo) => ['a', 'constructor'] instead of ['a']
-	t.deepEqual(keys(Foo), ['a'], 'has expected keys');
+	// the bug is keys(Foo.prototype) => ['a', 'constructor'] instead of ['a']
+	t.deepEqual(keys(Foo.prototype), ['a'], 'has expected keys');
 	t.end();
 });
 
