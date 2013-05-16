@@ -19,7 +19,7 @@
 		"shim"
 	],
 	"dependencies": {
-        "foreach": "~2.0.1",
+        "foreach": "~2.0.3",
 		"is": "~0.2.6"
 	},
 	"devDependencies": {
