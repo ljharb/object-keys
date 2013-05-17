@@ -110,3 +110,22 @@ test('works in environments with the dontEnum bug (IE < 9)', function (t) {
 	t.end();
 });
 
+test('shadowed properties', function (t) {
+	var shadowedProps = [
+		'dummyControlProp', /* just to be sure */
+		'constructor',
+		'hasOwnProperty',
+		'isPrototypeOf',
+		'propertyIsEnumerable',
+		'toLocaleString',
+		'toString',
+		'valueOf'
+	];
+	var shadowedObject = {};
+	forEach(shadowedProps, function (value, index) {
+		shadowedObject[value] = index;
+	});
+	t.deepEqual(keys(shadowedObject), shadowedProps, 'troublesome shadowed properties are keys of object literals');
+	t.end();
+});
+
