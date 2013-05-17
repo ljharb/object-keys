@@ -13,7 +13,8 @@
 			"valueOf",
 			"hasOwnProperty",
 			"isPrototypeOf",
-			"propertyIsEnumerable"
+			"propertyIsEnumerable",
+			"constructor"
 		],
 		keysShim;
 
@@ -33,20 +34,21 @@
 			});
 		} else {
 			var name,
-				skipProto = hasProtoEnumBug && isFunction,
-				ctor = object.constructor,
-				skipConstructor = ctor && ctor.prototype === object;
+				skipProto = hasProtoEnumBug && isFunction;
 
 			for (name in object) {
-				if (!(skipProto && name === 'prototype') && !(skipConstructor && name === 'constructor') && has.call(object, name)) {
+				if (!(skipProto && name === 'prototype') && has.call(object, name)) {
 					theKeys.push(name);
 				}
 			}
 		}
 
 		if (hasDontEnumBug) {
+			var ctor = object.constructor,
+				skipConstructor = ctor && ctor.prototype === object;
+
 			forEach(dontEnums, function (dontEnum) {
-				if (has.call(object, dontEnum)) {
+				if (!(skipConstructor && dontEnum === 'constructor') && has.call(object, dontEnum)) {
 					theKeys.push(dontEnum);
 				}
 			});

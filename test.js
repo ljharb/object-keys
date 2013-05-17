@@ -121,11 +121,14 @@ test('shadowed properties', function (t) {
 		'toString',
 		'valueOf'
 	];
+	shadowedProps.sort();
 	var shadowedObject = {};
 	forEach(shadowedProps, function (value, index) {
 		shadowedObject[value] = index;
 	});
-	t.deepEqual(keys(shadowedObject), shadowedProps, 'troublesome shadowed properties are keys of object literals');
+	var shadowedObjectKeys = keys(shadowedObject);
+	shadowedObjectKeys.sort();
+	t.deepEqual(shadowedObjectKeys, shadowedProps, 'troublesome shadowed properties are keys of object literals');
 	t.end();
 });
 
