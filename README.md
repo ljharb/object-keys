@@ -21,7 +21,7 @@ assert.equal(keys(obj), ['a', 'b', 'c']);
 ```
 
 ## Source
-Implementation taken directly from [9], with modifications, including from [lodash]([10]).
+Implementation taken directly from [es5-shim]([9]), with modifications, including from [lodash]([10]).
 
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
