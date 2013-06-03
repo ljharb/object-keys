@@ -1,7 +1,7 @@
 var test = require('tape');
-var shimmedKeys = require('./index.js');
+var shimmedKeys = require('../index.js');
 var is = require('is');
-var keys = require('./shim.js');
+var keys = require('../shim.js');
 var forEach = require('foreach');
 var indexOf = require('indexof');
 
