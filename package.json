@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"test": "node test.js"
+		"test": "node test/shim.js"
 	},
 	"repository": {
 		"type": "git",
