@@ -3,7 +3,7 @@
 
 	// modified from https://github.com/kriskowal/es5-shim
 	var has = Object.prototype.hasOwnProperty,
-		is = require('is'),
+		toString = Object.prototype.toString,
 		forEach = require('./foreach'),
 		isArgs = require('./isArguments'),
 		hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString'),
@@ -21,7 +21,7 @@
 
 	keysShim = function keys(object) {
 		var isObject = object !== null && typeof object === 'object',
-			isFunction = is.fn(object),
+			isFunction = toString.call(object) === '[object Function]',
 			isArguments = isArgs(object),
 			theKeys = [];
 
