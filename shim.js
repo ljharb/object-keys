@@ -5,6 +5,7 @@
 	var has = Object.prototype.hasOwnProperty,
 		is = require('is'),
 		forEach = require('./foreach'),
+		isArgs = require('./isArguments'),
 		hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString'),
 		hasProtoEnumBug = (function () {}).propertyIsEnumerable('prototype'),
 		dontEnums = [
@@ -21,7 +22,7 @@
 	keysShim = function keys(object) {
 		var isObject = object !== null && typeof object === 'object',
 			isFunction = is.fn(object),
-			isArguments = is.arguments(object),
+			isArguments = isArgs(object),
 			theKeys = [];
 
 		if (!isObject && !isFunction && !isArguments) {

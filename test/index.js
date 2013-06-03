@@ -1,5 +1,6 @@
 
-require('./foreach.js');
+require('./foreach');
+require('./isArguments');
 
-require('./shim.js');
+require('./shim');
 
