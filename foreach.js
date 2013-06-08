@@ -1,8 +1,16 @@
 var hasOwn = Object.prototype.hasOwnProperty;
 var toString = Object.prototype.toString;
 
+var isFunction = function (fn) {
+	var isFunc = typeof fn === 'function' || toString.call(fn) === '[object Function]';
+	if (!isFunc && typeof window !== 'undefined') {
+		isFunc = fn === window.setTimeout || fn === window.alert || fn === window.confirm || fn === window.prompt;
+	}
+	return isFunc;
+};
+
 module.exports = function forEach(obj, fn) {
-	if (toString.call(fn) !== '[object Function]') {
+	if (!isFunction(fn)) {
 		throw new TypeError('iterator must be a function');
 	}
 	var i, k,
