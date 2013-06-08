@@ -27,7 +27,7 @@
 		"indexof": "~0.0.1"
 	},
 	"testling": {
-		"files": "test.js",
+		"files": "test/index.js",
 		"browsers": [
 			"iexplore/6.0..latest",
 			"firefox/3.0..6.0",
