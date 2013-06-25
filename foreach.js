@@ -15,15 +15,23 @@ module.exports = function forEach(obj, fn) {
 	}
 	var i, k,
 		l = obj.length,
-		context = arguments.length > 2 ? arguments[2] : this;
+		context = arguments.length > 2 ? arguments[2] : null;
 	if (l === +l) {
 		for (i = 0; i < l; i++) {
-			fn.call(context, obj[i], i, obj);
+			if (context === null) {
+				fn(obj[i], i, obj);
+			} else {
+				fn.call(context, obj[i], i, obj);
+			}
 		}
 	} else {
 		for (k in obj) {
 			if (hasOwn.call(obj, k)) {
-				fn.call(context, obj[k], k, obj);
+				if (context === null) {
+					fn(obj[k], k, obj);
+				} else {
+					fn.call(context, obj[k], k, obj);
+				}
 			}
 		}
 	}
