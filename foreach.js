@@ -14,14 +14,15 @@ module.exports = function forEach(obj, fn) {
 		throw new TypeError('iterator must be a function');
 	}
 	var i, k,
+		isString = typeof obj === 'string',
 		l = obj.length,
 		context = arguments.length > 2 ? arguments[2] : null;
 	if (l === +l) {
 		for (i = 0; i < l; i++) {
 			if (context === null) {
-				fn(obj[i], i, obj);
+				fn(isString ? obj.charAt(i) : obj[i], i, obj);
 			} else {
-				fn.call(context, obj[i], i, obj);
+				fn.call(context, isString ? obj.charAt(i) : obj[i], i, obj);
 			}
 		}
 	} else {
