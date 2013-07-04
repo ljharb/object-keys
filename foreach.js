@@ -2,7 +2,7 @@ var hasOwn = Object.prototype.hasOwnProperty;
 var toString = Object.prototype.toString;
 
 var isFunction = function (fn) {
-	var isFunc = typeof fn === 'function' || toString.call(fn) === '[object Function]';
+	var isFunc = (typeof fn === 'function' && !(fn instanceof RegExp)) || toString.call(fn) === '[object Function]';
 	if (!isFunc && typeof window !== 'undefined') {
 		isFunc = fn === window.setTimeout || fn === window.alert || fn === window.confirm || fn === window.prompt;
 	}
