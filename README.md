@@ -2,6 +2,8 @@
 
 [![Build Status][3]][4] [![dependency status][5]][6] [![dev dependency status][7]][8]
 
+[![npm badge][13]][1]
+
 [![browser support][9]][10]
 
 An Object.keys shim. Uses Object.keys if available.
@@ -38,4 +40,5 @@ Simply clone the repo, `npm install`, and run `npm test`
 [10]: https://ci.testling.com/ljharb/object-keys
 [11]: https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js#L542-589
 [12]: https://github.com/bestiejs/lodash
+[13]: https://nodei.co/npm/object-keys.png?downloads=true&stars=true
 
