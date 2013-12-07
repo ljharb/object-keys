@@ -23,7 +23,7 @@
 	"devDependencies": {
 		"foreach": "~2.0.4",
 		"is": "~0.2.6",
-		"tape": "~2.1.0",
+		"tape": "~2.3.0",
 		"indexof": "~0.0.1"
 	},
 	"testling": {
