@@ -30,8 +30,8 @@
 		}
 
 		if (isArguments) {
-			forEach(object, function (value) {
-				theKeys.push(value);
+			forEach(object, function (value, index) {
+				theKeys.push(index);
 			});
 		} else {
 			var name,
