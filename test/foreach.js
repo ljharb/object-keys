@@ -151,6 +151,16 @@ test('string', function (t) {
 		});
 		st.equal(counter, str.length, 'iterates ' + str.length + ' times');
 	});
+
+	t.test('with context', function (st) {
+		var context = {};
+		st.plan(str.length * 2);
+		forEach(str, function (item, index) {
+			st.equal(this, context, 'context is passed: index ' + index);
+			st.equal(str.charAt(index), item, 'item matches: index ' + index);
+		}, context);
+		st.end();
+	});
 	t.end();
 });
 
