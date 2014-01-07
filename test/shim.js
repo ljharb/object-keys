@@ -1,7 +1,6 @@
 var test = require('tape');
-var shimmedKeys = require('../index.js');
 var is = require('is');
-var keys = require('../shim.js');
+var keys = require('../index.js');
 var forEach = require('foreach');
 var indexOf = require('indexof');
 
@@ -16,12 +15,27 @@ var obj = {
 };
 var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'aNull', 'undef'];
 
-test('exports a function', function (t) {
-	if (Object.keys) {
-		t.equal(Object.keys, shimmedKeys, 'Object.keys is supported and exported');
-	} else {
-		t.equal(keys, shimmedKeys, 'Object.keys is not supported; shim is exported');
-	}
+test('exports a "shim" function', function (t) {
+	t.equal(typeof keys.shim, 'function', 'keys.shim is a function');
+
+	t.test('when Object.keys is present', function (st) {
+		var originalObjectKeys = Object.keys;
+		Object.keys = function () {};
+		keys.shim();
+		st.notEqual(Object.keys, keys, 'Object.keys is not overridden');
+		Object.keys = originalObjectKeys;
+		st.end();
+	});
+
+	t.test('when Object.keys is not present', function (st) {
+		var originalObjectKeys = Object.keys;
+		delete Object.keys;
+		keys.shim();
+		st.equal(Object.keys, keys, 'Object.keys is overridden');
+		Object.keys = originalObjectKeys;
+		st.end();
+	});
+
 	t.end();
 });
 
