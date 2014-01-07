@@ -21,8 +21,9 @@ test('exports a "shim" function', function (t) {
 	t.test('when Object.keys is present', function (st) {
 		var originalObjectKeys = Object.keys;
 		Object.keys = function () {};
-		keys.shim();
+		var shimmedKeys = keys.shim();
 		st.notEqual(Object.keys, keys, 'Object.keys is not overridden');
+		st.equal(shimmedKeys, Object.keys, 'Object.keys is returned');
 		Object.keys = originalObjectKeys;
 		st.end();
 	});
@@ -30,8 +31,9 @@ test('exports a "shim" function', function (t) {
 	t.test('when Object.keys is not present', function (st) {
 		var originalObjectKeys = Object.keys;
 		delete Object.keys;
-		keys.shim();
+		var shimmedKeys = keys.shim();
 		st.equal(Object.keys, keys, 'Object.keys is overridden');
+		st.equal(shimmedKeys, keys, 'shim is returned');
 		Object.keys = originalObjectKeys;
 		st.end();
 	});

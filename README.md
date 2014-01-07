@@ -20,9 +20,24 @@ var obj = {
 };
 
 assert.deepEqual(keys(obj), ['a', 'b', 'c']);
+```
 
+```js
+var keys = require('object-keys');
+var assert = require('assert');
+/* when Object.keys is not present */
 delete Object.keys;
-keys.shim();
+var shimmedKeys = keys.shim();
+assert.equal(shimmedKeys, keys);
+assert.deepEqual(Object.keys(obj), keys(obj));
+```
+
+```js
+var keys = require('object-keys');
+var assert = require('assert');
+/* when Object.keys is present */
+var shimmedKeys = keys.shim();
+assert.equal(shimmedKeys, Object.keys);
 assert.deepEqual(Object.keys(obj), keys(obj));
 ```
 

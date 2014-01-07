@@ -61,6 +61,7 @@
 		if (!Object.keys) {
 			Object.keys = keysShim;
 		}
+		return Object.keys || keysShim;
 	};
 
 	module.exports = keysShim;
