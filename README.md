@@ -38,7 +38,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 [8]: https://david-dm.org/ljharb/object-keys#info=devDependencies
 [9]: https://ci.testling.com/ljharb/object-keys.png
 [10]: https://ci.testling.com/ljharb/object-keys
-[11]: https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js#L542-589
+[11]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
 [12]: https://github.com/bestiejs/lodash
 [13]: https://nodei.co/npm/object-keys.png?downloads=true&stars=true
 

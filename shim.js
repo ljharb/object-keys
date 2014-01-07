@@ -1,7 +1,7 @@
 (function () {
 	"use strict";
 
-	// modified from https://github.com/kriskowal/es5-shim
+	// modified from https://github.com/es-shims/es5-shim
 	var has = Object.prototype.hasOwnProperty,
 		toString = Object.prototype.toString,
 		forEach = require('./foreach'),
