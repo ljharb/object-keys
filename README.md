@@ -8,6 +8,11 @@
 
 An Object.keys shim. Invoke its "shim" method to shim Object.keys if it is unavailable.
 
+Most common usage:
+```js
+var keys = Object.keys || require('object-keys');
+```
+
 ## Example
 
 ```js
