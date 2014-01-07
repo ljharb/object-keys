@@ -6,7 +6,7 @@
 
 [![browser support][9]][10]
 
-An Object.keys shim. Uses Object.keys if available.
+An Object.keys shim. Invoke its "shim" method to shim Object.keys if it is unavailable.
 
 ## Example
 
@@ -19,7 +19,11 @@ var obj = {
 	c: true
 };
 
-assert.equal(keys(obj), ['a', 'b', 'c']);
+assert.deepEqual(keys(obj), ['a', 'b', 'c']);
+
+delete Object.keys;
+keys.shim();
+assert.deepEqual(Object.keys(obj), keys(obj));
 ```
 
 ## Source

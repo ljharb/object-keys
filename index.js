@@ -57,6 +57,12 @@
 		return theKeys;
 	};
 
+	keysShim.shim = function shimObjectKeys() {
+		if (!Object.keys) {
+			Object.keys = keysShim;
+		}
+	};
+
 	module.exports = keysShim;
 }());
 
