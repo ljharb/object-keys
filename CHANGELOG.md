@@ -1,3 +1,11 @@
+0.5.0 / 2014-01-30
+=================
+  * 0.5.0
+  * Explicitly returning the shim, instead of returning native Object.keys when present
+  * Adding a changelog.
+  * Cleaning up IIFE wrapping
+  * Testing on node 0.4 through 0.11
+
 0.4.0 / 2013-08-14
 ==================
 
