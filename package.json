@@ -25,9 +25,9 @@
 	"devDependencies": {
 		"foreach": "~2.0.4",
 		"is": "~0.2.7",
-		"tape": "~2.4.0",
+		"tape": "~2.4.2",
 		"indexof": "~0.0.1",
-		"covert": "~0.3.0"
+		"covert": "~0.3.1"
 	},
 	"testling": {
 		"files": "test/index.js",
