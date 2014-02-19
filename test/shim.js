@@ -156,3 +156,11 @@ test('shadowed properties', function (t) {
 	t.end();
 });
 
+test('works with the global object', function (t) {
+	// get global reference, even in "strict mode":
+	// http://stackoverflow.com/a/9647292/376773
+	var global = (1,eval)('this');
+	var theKeys = keys(global);
+	t.equal(is.array(theKeys), true, 'returns an array');
+	t.end();
+});
