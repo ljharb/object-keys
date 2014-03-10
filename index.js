@@ -3,7 +3,6 @@
 // modified from https://github.com/es-shims/es5-shim
 var has = Object.prototype.hasOwnProperty,
 	toString = Object.prototype.toString,
-	forEach = require('./foreach'),
 	isArgs = require('./isArguments'),
 	hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString'),
 	hasProtoEnumBug = (function () {}).propertyIsEnumerable('prototype'),
@@ -28,9 +27,11 @@ var keysShim = function keys(object) {
 	}
 
 	if (isArguments) {
-		forEach(object, function (value, index) {
-			theKeys.push(index);
-		});
+		for (var key in object) {
+			if (has.call(object, key)) {
+				theKeys.push(Number(key));
+			}
+		}
 	} else {
 		var name,
 			skipProto = hasProtoEnumBug && isFunction;
@@ -43,14 +44,14 @@ var keysShim = function keys(object) {
 	}
 
 	if (hasDontEnumBug) {
-		var ctor = object.constructor,
-			skipConstructor = ctor && ctor.prototype === object;
+		var ctor = object.constructor;
+		var skipConstructor = ctor && ctor.prototype === object;
 
-		forEach(dontEnums, function (dontEnum) {
-			if (!(skipConstructor && dontEnum === 'constructor') && has.call(object, dontEnum)) {
+		for (var j = 0; j < dontEnums.length; ++j) {
+			if (!(skipConstructor && dontEnums[j] === 'constructor') && has.call(object, dontEnums[j])) {
 				theKeys.push(dontEnum);
 			}
-		});
+		}
 	}
 	return theKeys;
 };
