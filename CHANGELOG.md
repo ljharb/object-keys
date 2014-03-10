@@ -1,3 +1,9 @@
+0.5.1 / 2014-03-09
+=================
+  * 0.5.1
+  * Updating dependencies (tape, covert, is)
+  * Removing forEach from the module (but keeping it in tests)
+
 0.5.0 / 2014-01-30
 =================
   * 0.5.0
