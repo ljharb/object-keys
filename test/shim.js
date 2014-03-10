@@ -1,8 +1,8 @@
 var test = require('tape');
 var is = require('is');
 var keys = require('../index.js');
-var forEach = require('foreach');
 var indexOf = require('indexof');
+var has = Object.prototype.hasOwnProperty;
 
 var obj = {
 	"str": "boz",
@@ -79,9 +79,10 @@ test('works with a function', function (t) {
 });
 
 test('returns names which are own properties', function (t) {
-	forEach(keys(obj), function (name) {
-		t.equal(obj.hasOwnProperty(name), true, name + ' should be returned');
-	});
+	var theKeys = keys(obj);
+	for (var i = 0; i < theKeys.length; ++i) {
+		t.equal(has.call(obj, theKeys[i]), true, theKeys[i] + ' should be returned');
+	}
 	t.end();
 });
 
@@ -90,9 +91,10 @@ test('returns names which are enumerable', function (t) {
 	for (k in obj) {
 		loopedValues.push(k);
 	}
-	forEach(keys(obj), function (name) {
-		t.notEqual(indexOf(loopedValues, name), -1, name + ' is not enumerable');
-	});
+	var theKeys = keys(obj);
+	for (var i = 0; i < theKeys.length; ++i) {
+		t.notEqual(indexOf(loopedValues, theKeys[i]), -1, theKeys[i] + ' is not enumerable');
+	}
 	t.end();
 });
 
@@ -147,9 +149,9 @@ test('shadowed properties', function (t) {
 	];
 	shadowedProps.sort();
 	var shadowedObject = {};
-	forEach(shadowedProps, function (value, index) {
-		shadowedObject[value] = index;
-	});
+	for (var i = 0; i < shadowedProps.length; ++i) {
+		shadowedObject[shadowedProps[i]] = i;
+	}
 	var shadowedObjectKeys = keys(shadowedObject);
 	shadowedObjectKeys.sort();
 	t.deepEqual(shadowedObjectKeys, shadowedProps, 'troublesome shadowed properties are keys of object literals');
