@@ -7,8 +7,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "node test/index.js",
-		"coverage": "covert test/index.js",
-		"coverage-quiet": "covert test/index.js --quiet"
+		"coverage": "covert test/*.js",
+		"coverage-quiet": "covert test/*.js --quiet"
 	},
 	"repository": {
 		"type": "git",
