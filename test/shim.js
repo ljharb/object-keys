@@ -3,6 +3,7 @@ var is = require('is');
 var keys = require('../index.js');
 var indexOf = require('indexof');
 var has = Object.prototype.hasOwnProperty;
+var enumerable = Object.prototype.propertyIsEnumerable;
 
 var obj = {
 	"str": "boz",
@@ -89,7 +90,9 @@ test('returns names which are own properties', function (t) {
 test('returns names which are enumerable', function (t) {
 	var k, loopedValues = [];
 	for (k in obj) {
-		loopedValues.push(k);
+		if (enumerable.call(obj, k)) {
+			loopedValues.push(k);
+		}
 	}
 	var theKeys = keys(obj);
 	for (var i = 0; i < theKeys.length; ++i) {
