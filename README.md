@@ -47,7 +47,7 @@ assert.deepEqual(Object.keys(obj), keys(obj));
 ```
 
 ## Source
-Implementation taken directly from [es5-shim]([11]), with modifications, including from [lodash]([12]).
+Implementation taken directly from [es5-shim][11], with modifications, including from [lodash][12].
 
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
