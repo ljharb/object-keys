@@ -62,6 +62,12 @@ test('works with an arguments object', function (t) {
 	t.end();
 });
 
+test('works with a boxed primitive', function (t) {
+	t.deepEqual(keys(new String('hello')), ['0', '1', '2', '3', '4'], 'String object returns proper keys');
+	t.deepEqual(keys(Object('hello')), ['0', '1', '2', '3', '4'], 'object string returns proper keys');
+	t.end();
+});
+
 test('works with an array', function (t) {
 	var arr = [1, 2, 3];
 	var theKeys = keys(arr);
