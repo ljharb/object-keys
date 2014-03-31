@@ -20,6 +20,7 @@ var keysShim = function keys(object) {
 	var isObject = object !== null && typeof object === 'object',
 		isFunction = toString.call(object) === '[object Function]',
 		isArguments = isArgs(object),
+		isString = isObject && toString.call(object) === '[object String]',
 		theKeys = [];
 
 	if (!isObject && !isFunction && !isArguments) {
@@ -27,9 +28,15 @@ var keysShim = function keys(object) {
 	}
 
 	var skipProto = hasProtoEnumBug && isFunction;
-	for (var name in object) {
-		if (!(skipProto && name === 'prototype') && has.call(object, name)) {
-			theKeys.push(String(name));
+	if (isString || isArguments) {
+		for (var i = 0; i < object.length; ++i) {
+			theKeys.push(String(i));
+		}
+	} else {
+		for (var name in object) {
+			if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+				theKeys.push(String(name));
+			}
 		}
 	}
 
