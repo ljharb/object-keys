@@ -26,20 +26,10 @@ var keysShim = function keys(object) {
 		throw new TypeError("Object.keys called on a non-object");
 	}
 
-	if (isArguments) {
-		for (var key in object) {
-			if (has.call(object, key)) {
-				theKeys.push(Number(key));
-			}
-		}
-	} else {
-		var name,
-			skipProto = hasProtoEnumBug && isFunction;
-
-		for (name in object) {
-			if (!(skipProto && name === 'prototype') && has.call(object, name)) {
-				theKeys.push(name);
-			}
+	var skipProto = hasProtoEnumBug && isFunction;
+	for (var name in object) {
+		if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+			theKeys.push(String(name));
 		}
 	}
 
@@ -49,7 +39,7 @@ var keysShim = function keys(object) {
 
 		for (var j = 0; j < dontEnums.length; ++j) {
 			if (!(skipConstructor && dontEnums[j] === 'constructor') && has.call(object, dontEnums[j])) {
-				theKeys.push(dontEnum);
+				theKeys.push(dontEnums[j]);
 			}
 		}
 	}

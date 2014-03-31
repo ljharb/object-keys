@@ -57,7 +57,7 @@ test('works with an object literal', function (t) {
 test('works with an arguments object', function (t) {
 	(function () {
 		t.equal(arguments.length, 3, 'arguments has length of 3');
-		t.deepEqual(keys(arguments), [0, 1, 2], 'returns keys of arguments');
+		t.deepEqual(keys(arguments), ['0', '1', '2'], 'returns keys of arguments');
 	}(1, 2, 3));
 	t.end();
 });
