@@ -68,7 +68,7 @@ test('works with a boxed primitive', function (t) {
 
 	var x = new String('x');
 	x.y = 1;
-	t.deepEqual(keys(x), ['0', 'y'], 'String object with extra properties returns proper keys');
+	t.deepEqual(keys(x).sort(), ['0', 'y'].sort(), 'String object with extra properties returns proper keys');
 
 	t.end();
 });
