@@ -28,15 +28,21 @@ var keysShim = function keys(object) {
 	}
 
 	var skipProto = hasProtoEnumBug && isFunction;
-	if ((isString || isArguments) && object.length > 0 && !has.call(object, 0)) {
+	if (isString && object.length > 0 && !has.call(object, 0)) {
 		for (var i = 0; i < object.length; ++i) {
 			theKeys.push(String(i));
 		}
 	}
 
-	for (var name in object) {
-		if (!(skipProto && name === 'prototype') && has.call(object, name)) {
-			theKeys.push(String(name));
+	if (isArguments && object.length > 0) {
+		for (var j = 0; j < object.length; ++j) {
+			theKeys.push(String(j));
+		}
+	} else {
+		for (var name in object) {
+			if (!(skipProto && name === 'prototype') && has.call(object, name)) {
+				theKeys.push(String(name));
+			}
 		}
 	}
 
