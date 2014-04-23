@@ -27,7 +27,7 @@
 		"is": "~0.3.0",
 		"tape": "~2.12.0",
 		"indexof": "~0.0.1",
-		"covert": "~0.3.1"
+		"covert": "~0.4.0"
 	},
 	"testling": {
 		"files": "test/index.js",
