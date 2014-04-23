@@ -1,3 +1,11 @@
+0.6.0 / 2014-04-23
+=================
+  * v0.6.0
+  * Updating dependencies (tape, covert)
+  * Make sure boxed primitives, and arguments objects, work properly in ES3 browsers
+  * Improve test matrix: test all node versions, but only latest two stables are a failure
+  * Remove internal foreach shim.
+
 0.5.1 / 2014-03-09
 =================
   * 0.5.1
