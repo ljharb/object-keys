@@ -31,7 +31,9 @@ test('exports a "shim" function', function (t) {
 
 	t.test('when Object.keys is not present', function (st) {
 		var originalObjectKeys = Object.keys;
+		Object.keys = undefined;
 		delete Object.keys;
+		st.notOk(Object.keys, 'Object.keys has been deleted');
 		var shimmedKeys = keys.shim();
 		st.equal(Object.keys, keys, 'Object.keys is overridden');
 		st.equal(shimmedKeys, keys, 'shim is returned');
