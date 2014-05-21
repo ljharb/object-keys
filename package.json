@@ -6,9 +6,10 @@
 	"license": "MIT",
 	"main": "index.js",
 	"scripts": {
-		"test": "node test/index.js",
+		"test": "npm run lint && node test/index.js",
 		"coverage": "covert test/*.js",
-		"coverage-quiet": "covert test/*.js --quiet"
+		"coverage-quiet": "covert test/*.js --quiet",
+		"lint": "jscs test/*.js *.js"
 	},
 	"repository": {
 		"type": "git",
@@ -27,7 +28,8 @@
 		"is": "~0.3.0",
 		"tape": "~2.12.0",
 		"indexof": "~0.0.1",
-		"covert": "~0.4.0"
+		"covert": "~0.4.0",
+		"jscs": "~1.4.5"
 	},
 	"testling": {
 		"files": "test/index.js",

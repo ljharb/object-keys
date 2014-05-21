@@ -6,13 +6,13 @@ var has = Object.prototype.hasOwnProperty;
 var enumerable = Object.prototype.propertyIsEnumerable;
 
 var obj = {
-	"str": "boz",
-	"obj": {},
-	"arr": [],
-	"bool": true,
-	"num": 42,
-	"aNull": null,
-	"undef": undefined
+	str: "boz",
+	obj: {},
+	arr: [],
+	bool: true,
+	num: 42,
+	aNull: null,
+	undef: undefined
 };
 var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'aNull', 'undef'];
 
