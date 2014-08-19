@@ -54,11 +54,11 @@ Simply clone the repo, `npm install`, and run `npm test`
 
 [1]: https://npmjs.org/package/object-keys
 [2]: http://vb.teelaun.ch/ljharb/object-keys.svg
-[3]: https://travis-ci.org/ljharb/object-keys.png
+[3]: https://travis-ci.org/ljharb/object-keys.svg
 [4]: https://travis-ci.org/ljharb/object-keys
-[5]: https://david-dm.org/ljharb/object-keys.png
+[5]: https://david-dm.org/ljharb/object-keys.svg
 [6]: https://david-dm.org/ljharb/object-keys
-[7]: https://david-dm.org/ljharb/object-keys/dev-status.png
+[7]: https://david-dm.org/ljharb/object-keys/dev-status.svg
 [8]: https://david-dm.org/ljharb/object-keys#info=devDependencies
 [9]: https://ci.testling.com/ljharb/object-keys.png
 [10]: https://ci.testling.com/ljharb/object-keys
