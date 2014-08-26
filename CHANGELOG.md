@@ -1,3 +1,10 @@
+0.6.1 / 2014-08-25
+=================
+  * v0.6.1
+  * Updating dependencies (tape, covert, is)
+  * Update badges in readme
+  * Use separate var statements
+
 0.6.0 / 2014-04-23
 =================
   * v0.6.0
