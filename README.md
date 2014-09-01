@@ -72,5 +72,5 @@ Simply clone the repo, `npm install`, and run `npm test`
 [license-image]: http://img.shields.io/npm/l/object-keys.svg
 [license-url]: LICENSE
 [downloads-image]: http://img.shields.io/npm/dm/object-keys.svg
-[downloads-url]: https://npmjs.org/package/object-keys
+[downloads-url]: http://npm-stat.com/charts.html?package=object-keys
 
