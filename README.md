@@ -1,6 +1,10 @@
 #object-keys <sup>[![Version Badge][2]][1]</sup>
 
-[![Build Status][3]][4] [![dependency status][5]][6] [![dev dependency status][7]][8]
+[![Build Status][3]][4]
+[![dependency status][5]][6]
+[![dev dependency status][7]][8]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
 
 [![npm badge][13]][1]
 
@@ -65,4 +69,8 @@ Simply clone the repo, `npm install`, and run `npm test`
 [11]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
 [12]: https://github.com/bestiejs/lodash
 [13]: https://nodei.co/npm/object-keys.png?downloads=true&stars=true
+[license-image]: http://img.shields.io/npm/l/object-keys.svg
+[license-url]: LICENSE
+[downloads-image]: http://img.shields.io/npm/dm/object-keys.svg
+[downloads-url]: https://npmjs.org/package/object-keys
 
