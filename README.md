@@ -1,4 +1,4 @@
-#object-keys <sup>[![Version Badge][2]][package-url]</sup>
+#object-keys <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
 [![Build Status][3]][4]
 [![dependency status][5]][6]
@@ -57,7 +57,7 @@ Implementation taken directly from [es5-shim][11], with modifications, including
 Simply clone the repo, `npm install`, and run `npm test`
 
 [package-url]: https://npmjs.org/package/object-keys
-[2]: http://vb.teelaun.ch/ljharb/object-keys.svg
+[npm-version-svg]: http://vb.teelaun.ch/ljharb/object-keys.svg
 [3]: https://travis-ci.org/ljharb/object-keys.svg
 [4]: https://travis-ci.org/ljharb/object-keys
 [5]: https://david-dm.org/ljharb/object-keys.svg
