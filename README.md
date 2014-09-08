@@ -8,7 +8,7 @@
 
 [![npm badge][13]][package-url]
 
-[![browser support][9]][10]
+[![browser support][testling-svg]][testling-url]
 
 An Object.keys shim. Invoke its "shim" method to shim Object.keys if it is unavailable.
 
@@ -64,8 +64,8 @@ Simply clone the repo, `npm install`, and run `npm test`
 [deps-url]: https://david-dm.org/ljharb/object-keys
 [dev-deps-svg]: https://david-dm.org/ljharb/object-keys/dev-status.svg
 [dev-deps-url]: https://david-dm.org/ljharb/object-keys#info=devDependencies
-[9]: https://ci.testling.com/ljharb/object-keys.png
-[10]: https://ci.testling.com/ljharb/object-keys
+[testling-svg]: https://ci.testling.com/ljharb/object-keys.png
+[testling-url]: https://ci.testling.com/ljharb/object-keys
 [11]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
 [12]: https://github.com/bestiejs/lodash
 [13]: https://nodei.co/npm/object-keys.png?downloads=true&stars=true
