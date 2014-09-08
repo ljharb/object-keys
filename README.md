@@ -1,6 +1,6 @@
 #object-keys <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-[![Build Status][3]][4]
+[![Build Status][travis-svg]][travis-url]
 [![dependency status][5]][6]
 [![dev dependency status][7]][8]
 [![License][license-image]][license-url]
@@ -58,8 +58,8 @@ Simply clone the repo, `npm install`, and run `npm test`
 
 [package-url]: https://npmjs.org/package/object-keys
 [npm-version-svg]: http://vb.teelaun.ch/ljharb/object-keys.svg
-[3]: https://travis-ci.org/ljharb/object-keys.svg
-[4]: https://travis-ci.org/ljharb/object-keys
+[travis-svg]: https://travis-ci.org/ljharb/object-keys.svg
+[travis-url]: https://travis-ci.org/ljharb/object-keys
 [5]: https://david-dm.org/ljharb/object-keys.svg
 [6]: https://david-dm.org/ljharb/object-keys
 [7]: https://david-dm.org/ljharb/object-keys/dev-status.svg
