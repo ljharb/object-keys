@@ -6,7 +6,7 @@
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
 
-[![npm badge][13]][package-url]
+[![npm badge][npm-badge-png]][package-url]
 
 [![browser support][testling-svg]][testling-url]
 
@@ -68,7 +68,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 [testling-url]: https://ci.testling.com/ljharb/object-keys
 [es5-shim-url]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
 [lodash-url]: https://github.com/lodash/lodash
-[13]: https://nodei.co/npm/object-keys.png?downloads=true&stars=true
+[npm-badge-png]: https://nodei.co/npm/object-keys.png?downloads=true&stars=true
 [license-image]: http://img.shields.io/npm/l/object-keys.svg
 [license-url]: LICENSE
 [downloads-image]: http://img.shields.io/npm/dm/object-keys.svg
