@@ -51,7 +51,7 @@ assert.deepEqual(Object.keys(obj), keys(obj));
 ```
 
 ## Source
-Implementation taken directly from [es5-shim][es5-shim-url], with modifications, including from [lodash][12].
+Implementation taken directly from [es5-shim][es5-shim-url], with modifications, including from [lodash][lodash-url].
 
 ## Tests
 Simply clone the repo, `npm install`, and run `npm test`
@@ -67,7 +67,7 @@ Simply clone the repo, `npm install`, and run `npm test`
 [testling-svg]: https://ci.testling.com/ljharb/object-keys.png
 [testling-url]: https://ci.testling.com/ljharb/object-keys
 [es5-shim-url]: https://github.com/es-shims/es5-shim/blob/master/es5-shim.js#L542-589
-[12]: https://github.com/bestiejs/lodash
+[lodash-url]: https://github.com/lodash/lodash
 [13]: https://nodei.co/npm/object-keys.png?downloads=true&stars=true
 [license-image]: http://img.shields.io/npm/l/object-keys.svg
 [license-url]: LICENSE
