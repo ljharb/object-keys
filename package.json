@@ -9,7 +9,8 @@
 		"test": "npm run lint && node test/index.js",
 		"coverage": "covert test/*.js",
 		"coverage-quiet": "covert test/*.js --quiet",
-		"lint": "jscs test/*.js *.js"
+		"lint": "jscs test/*.js *.js",
+		"eccheck": "editorconfig-tools check *.js **/*.js > /dev/null"
 	},
 	"repository": {
 		"type": "git",
@@ -28,7 +29,8 @@
 		"tape": "~3.0.0",
 		"indexof": "~0.0.1",
 		"covert": "~1.0.0",
-		"jscs": "~1.6.2"
+		"jscs": "~1.6.2",
+		"editorconfig-tools": "~0.0.0"
 	},
 	"testling": {
 		"files": "test/index.js",
