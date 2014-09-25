@@ -6,7 +6,7 @@ var has = Object.prototype.hasOwnProperty;
 var enumerable = Object.prototype.propertyIsEnumerable;
 
 var obj = {
-	str: "boz",
+	str: 'boz',
 	obj: {},
 	arr: [],
 	bool: true,

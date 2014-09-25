@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // modified from https://github.com/es-shims/es5-shim
 var has = Object.prototype.hasOwnProperty;
@@ -7,13 +7,13 @@ var isArgs = require('./isArguments');
 var hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString');
 var hasProtoEnumBug = (function () {}).propertyIsEnumerable('prototype');
 var dontEnums = [
-	"toString",
-	"toLocaleString",
-	"valueOf",
-	"hasOwnProperty",
-	"isPrototypeOf",
-	"propertyIsEnumerable",
-	"constructor"
+	'toString',
+	'toLocaleString',
+	'valueOf',
+	'hasOwnProperty',
+	'isPrototypeOf',
+	'propertyIsEnumerable',
+	'constructor'
 ];
 
 var keysShim = function keys(object) {
@@ -24,7 +24,7 @@ var keysShim = function keys(object) {
 	var theKeys = [];
 
 	if (!isObject && !isFunction && !isArguments) {
-		throw new TypeError("Object.keys called on a non-object");
+		throw new TypeError('Object.keys called on a non-object');
 	}
 
 	var skipProto = hasProtoEnumBug && isFunction;

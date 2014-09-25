@@ -56,6 +56,11 @@
 
 	"requireParenthesesAroundIIFE": true,
 
-	"validateLineBreaks": "LF"
+	"validateLineBreaks": "LF",
+
+	"validateQuoteMarks": {
+		"escape": true,
+		"mark": "'"
+	}
 }
 
