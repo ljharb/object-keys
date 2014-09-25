@@ -46,9 +46,15 @@
 
   "disallowTrailingWhitespace": true,
 
+  "disallowTrailingComma": true,
+
   "excludeFiles": ["node_modules/**", "vendor/**"],
 
   "disallowMultipleLineStrings": true,
+
+  "requireDotNotation": true,
+
+  "requireParenthesesAroundIIFE": true,
 
   "additionalRules": []
 }
