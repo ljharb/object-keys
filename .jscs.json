@@ -1,4 +1,6 @@
 {
+	"additionalRules": [],
+
 	"requireCurlyBraces": ["if", "else", "for", "while", "do", "try", "catch"],
 
 	"requireSpaceAfterKeywords": ["if", "else", "for", "while", "do", "switch", "return", "try", "catch", "function"],
@@ -37,8 +39,6 @@
 
 	"disallowKeywords": ["with", "eval"],
 
-	"validateLineBreaks": "LF",
-
 	"requireKeywordsOnNewLine": [],
 	"disallowKeywordsOnNewLine": ["else"],
 
@@ -56,6 +56,6 @@
 
 	"requireParenthesesAroundIIFE": true,
 
-	"additionalRules": []
+	"validateLineBreaks": "LF"
 }
 
