@@ -28,7 +28,7 @@
 		"is": "~2.1.0",
 		"tape": "~3.0.1",
 		"indexof": "~0.0.1",
-		"covert": "~1.0.0",
+		"covert": "1.0.0",
 		"jscs": "~1.7.3",
 		"editorconfig-tools": "~0.0.0"
 	},
