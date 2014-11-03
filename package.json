@@ -30,7 +30,7 @@
 		"indexof": "~0.0.1",
 		"covert": "1.0.0",
 		"jscs": "~1.7.3",
-		"editorconfig-tools": "~0.0.0"
+		"editorconfig-tools": "~0.0.1"
 	},
 	"testling": {
 		"files": "test/index.js",
