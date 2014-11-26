@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"foreach": "~2.0.5",
 		"is": "~2.1.0",
-		"tape": "~3.0.1",
+		"tape": "~3.0.3",
 		"indexof": "~0.0.1",
 		"covert": "1.0.0",
 		"jscs": "~1.7.3",
