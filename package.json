@@ -30,7 +30,7 @@
 		"tape": "~3.0.3",
 		"indexof": "~0.0.1",
 		"covert": "1.0.0",
-		"jscs": "~1.8.1",
+		"jscs": "~1.9.0",
 		"editorconfig-tools": "~0.0.1",
 		"nsp": "~0.5.2"
 	},
