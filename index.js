@@ -5,7 +5,7 @@ var has = Object.prototype.hasOwnProperty;
 var toStr = Function.call.bind(Object.prototype.toString);
 var isArgs = require('./isArguments');
 var hasDontEnumBug = !({'toString': null}).propertyIsEnumerable('toString');
-var hasProtoEnumBug = (function () {}).propertyIsEnumerable('prototype');
+var hasProtoEnumBug = function () {}.propertyIsEnumerable('prototype');
 var dontEnums = [
 	'toString',
 	'toLocaleString',
