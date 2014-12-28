@@ -126,9 +126,9 @@ test('throws an error for a non-object', function (t) {
 test('works with an object instance', function (t) {
 	var Prototype = function () {};
 	Prototype.prototype.foo = true;
-	var obj = new Prototype();
-	obj.bar = true;
-	var theKeys = keys(obj);
+	var instance = new Prototype();
+	instance.bar = true;
+	var theKeys = keys(instance);
 	t.equal(is.array(theKeys), true, 'returns an array');
 	t.deepEqual(theKeys, ['bar'], 'Instance has expected keys');
 	t.end();
@@ -173,4 +173,3 @@ test('shadowed properties', function (t) {
 	t.deepEqual(shadowedObjectKeys, shadowedProps, 'troublesome shadowed properties are keys of object literals');
 	t.end();
 });
-
