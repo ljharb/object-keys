@@ -1,3 +1,13 @@
+1.0.2 / 2014-12-28
+=================
+  * Update lots of dev dependencies
+  * Tweaks to README
+  * Make `object-keys` more robust against later environment tampering
+
+1.0.1 / 2014-09-03
+=================
+  * Update URLs and badges in README
+
 1.0.0 / 2014-08-26
 =================
   * v1.0.0
