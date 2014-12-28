@@ -50,9 +50,9 @@ var keysShim = function keys(object) {
 		var ctor = object.constructor;
 		var skipConstructor = ctor && ctor.prototype === object;
 
-		for (var j = 0; j < dontEnums.length; ++j) {
-			if (!(skipConstructor && dontEnums[j] === 'constructor') && has.call(object, dontEnums[j])) {
-				theKeys.push(dontEnums[j]);
+		for (var k = 0; k < dontEnums.length; ++k) {
+			if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
+				theKeys.push(dontEnums[k]);
 			}
 		}
 	}
