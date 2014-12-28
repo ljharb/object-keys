@@ -65,10 +65,12 @@ test('works with an arguments object', function (t) {
 });
 
 test('works with a boxed primitive', function (t) {
-	t.deepEqual(keys(new String('hello')), ['0', '1', '2', '3', '4'], 'String object returns proper keys');
 	t.deepEqual(keys(Object('hello')), ['0', '1', '2', '3', '4'], 'object string returns proper keys');
+	/*eslint-disable no-new-wrappers */
+	t.deepEqual(keys(new String('hello')), ['0', '1', '2', '3', '4'], 'String object returns proper keys');
 
 	var x = new String('x');
+	/*eslint-enable no-new-wrappers */
 	x.y = 1;
 	t.deepEqual(keys(x).sort(), ['0', 'y'].sort(), 'String object with extra properties returns proper keys');
 

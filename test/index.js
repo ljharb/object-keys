@@ -2,4 +2,3 @@
 require('./isArguments');
 
 require('./shim');
-
