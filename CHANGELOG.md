@@ -1,3 +1,7 @@
+1.0.3 / 2015-01-06
+=================
+  * Revert "Make `object-keys` more robust against later environment tampering" to maintain ES3 compliance
+
 1.0.2 / 2014-12-28
 =================
   * Update lots of dev dependencies
