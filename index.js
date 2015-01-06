@@ -2,7 +2,7 @@
 
 // modified from https://github.com/es-shims/es5-shim
 var has = Object.prototype.hasOwnProperty;
-var toStr = Function.call.bind(Object.prototype.toString);
+var toStr = Object.prototype.toString;
 var isArgs = require('./isArguments');
 var hasDontEnumBug = !({ 'toString': null }).propertyIsEnumerable('toString');
 var hasProtoEnumBug = function () {}.propertyIsEnumerable('prototype');
@@ -18,9 +18,9 @@ var dontEnums = [
 
 var keysShim = function keys(object) {
 	var isObject = object !== null && typeof object === 'object';
-	var isFunction = toStr(object) === '[object Function]';
+	var isFunction = toStr.call(object) === '[object Function]';
 	var isArguments = isArgs(object);
-	var isString = isObject && toStr(object) === '[object String]';
+	var isString = isObject && toStr.call(object) === '[object String]';
 	var theKeys = [];
 
 	if (!isObject && !isFunction && !isArguments) {

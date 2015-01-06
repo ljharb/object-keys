@@ -1,9 +1,9 @@
 'use strict';
 
-var toStr = Function.call.bind(Object.prototype.toString);
+var toStr = Object.prototype.toString;
 
 module.exports = function isArguments(value) {
-	var str = toStr(value);
+	var str = toStr.call(value);
 	var isArgs = str === '[object Arguments]';
 	if (!isArgs) {
 		isArgs = str !== '[object Array]'
@@ -11,7 +11,7 @@ module.exports = function isArguments(value) {
 			&& typeof value === 'object'
 			&& typeof value.length === 'number'
 			&& value.length >= 0
-			&& toStr(value.callee) === '[object Function]';
+			&& toStr.call(value.callee) === '[object Function]';
 	}
 	return isArgs;
 };
