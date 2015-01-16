@@ -29,10 +29,10 @@
 	"devDependencies": {
 		"foreach": "~2.0.5",
 		"is": "~2.2.0",
-		"tape": "~3.0.3",
+		"tape": "~3.2.0",
 		"indexof": "~0.0.1",
 		"covert": "1.0.0",
-		"jscs": "~1.9.0",
+		"jscs": "~1.10.0",
 		"editorconfig-tools": "~0.0.1",
 		"nsp": "~0.5.2",
 		"eslint": "~0.11.0"
