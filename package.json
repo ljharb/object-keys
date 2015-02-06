@@ -28,11 +28,11 @@
 	"dependencies": {},
 	"devDependencies": {
 		"foreach": "~2.0.5",
-		"is": "~2.2.0",
+		"is": "~2.2.1",
 		"tape": "~3.5.0",
 		"indexof": "~0.0.1",
 		"covert": "1.0.0",
-		"jscs": "~1.10.0",
+		"jscs": "~1.11.0",
 		"editorconfig-tools": "~0.0.1",
 		"nsp": "~1.0.0",
 		"eslint": "~0.13.0"
