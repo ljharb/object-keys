@@ -27,15 +27,15 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"foreach": "~2.0.5",
-		"is": "~2.2.1",
-		"tape": "~3.5.0",
-		"indexof": "~0.0.1",
-		"covert": "1.0.0",
-		"jscs": "~1.11.3",
-		"editorconfig-tools": "~0.0.1",
-		"nsp": "~1.0.0",
-		"eslint": "~0.14.1"
+		"foreach": "^2.0.5",
+		"is": "^2.2.1",
+		"tape": "^3.5.0",
+		"indexof": "^0.0.1",
+		"covert": "^1.0.1",
+		"jscs": "^1.11.3",
+		"editorconfig-tools": "^0.0.1",
+		"nsp": "^1.0.0",
+		"eslint": "^0.14.1"
 	},
 	"testling": {
 		"files": "test/index.js",
