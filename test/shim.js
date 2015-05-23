@@ -50,6 +50,19 @@ test('exports a "shim" function', function (t) {
 		st.end();
 	}));
 
+	t.test('when Object.keys has arguments bug', preserve(Object, 'keys', function (st) {
+		var originalObjectKeys = Object.keys;
+		Object.keys = function keys(object) {
+			if (is.args(object)) { return []; }
+			return originalObjectKeys(object);
+		};
+		st.notDeepEqual(Object.keys(arguments), ['0'], 'Object.keys has arguments bug');
+		var shimmedKeys = keys.shim();
+		st.equal(Object.keys, shimmedKeys, 'Object.keys is overridden');
+		st.deepEqual(Object.keys(arguments), ['0'], 'Object.keys now works with arguments');
+		st.end();
+	}));
+
 	t.end();
 });
 
