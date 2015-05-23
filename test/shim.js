@@ -16,30 +16,39 @@ var obj = {
 };
 var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'aNull', 'undef'];
 
+var noop = function () {};
+var preserve = function preserve(object, property, callback) {
+	return function preserved() {
+		var original = object[property];
+		try {
+			return callback.apply(this, arguments);
+		} finally {
+			object[property] = original;
+		}
+	};
+};
+
 test('exports a "shim" function', function (t) {
 	t.equal(typeof keys.shim, 'function', 'keys.shim is a function');
 
-	t.test('when Object.keys is present', function (st) {
-		var originalObjectKeys = Object.keys;
-		Object.keys = function () {};
+	t.test('when Object.keys is present', preserve(Object, 'keys', function (st) {
+		Object.keys = noop;
+		st.equal(Object.keys, noop, 'Object.keys has been replaced');
 		var shimmedKeys = keys.shim();
 		st.notEqual(Object.keys, keys, 'Object.keys is not overridden');
 		st.equal(shimmedKeys, Object.keys, 'Object.keys is returned');
-		Object.keys = originalObjectKeys;
 		st.end();
-	});
+	}));
 
-	t.test('when Object.keys is not present', function (st) {
-		var originalObjectKeys = Object.keys;
+	t.test('when Object.keys is not present', preserve(Object, 'keys', function (st) {
 		Object.keys = undefined;
 		delete Object.keys;
 		st.notOk(Object.keys, 'Object.keys has been deleted');
 		var shimmedKeys = keys.shim();
 		st.equal(Object.keys, keys, 'Object.keys is overridden');
 		st.equal(shimmedKeys, keys, 'shim is returned');
-		Object.keys = originalObjectKeys;
 		st.end();
-	});
+	}));
 
 	t.end();
 });
