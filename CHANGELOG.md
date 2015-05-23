@@ -1,3 +1,9 @@
+1.0.4 / 2015-05-23
+=================
+  * Fix a Safari 5.0 bug with `Object.keys` not working with `arguments`
+  * Test on latest `node` and `io.js`
+  * Update `jscs`, `tape`, `eslint`, `nsp`, `is`, `editorconfig-tools`, `covert`
+
 1.0.3 / 2015-01-06
 =================
   * Revert "Make `object-keys` more robust against later environment tampering" to maintain ES3 compliance
