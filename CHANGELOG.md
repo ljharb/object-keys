@@ -1,3 +1,9 @@
+1.0.5 / 2015-07-03
+=================
+  * [Fix] Fix a flabbergasting IE 8 bug where `localStorage.constructor.prototype === localStorage` throws
+  * [Tests] Test up to `io.js` `v2.3`
+  * [Dev Deps] Update `nsp`, `eslint`
+
 1.0.4 / 2015-05-23
 =================
   * Fix a Safari 5.0 bug with `Object.keys` not working with `arguments`
