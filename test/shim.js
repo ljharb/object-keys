@@ -1,3 +1,5 @@
+/* global window */
+
 var test = require('tape');
 var is = require('is');
 var keys = require('../index.js');
@@ -195,5 +197,23 @@ test('shadowed properties', function (t) {
 	var shadowedObjectKeys = keys(shadowedObject);
 	shadowedObjectKeys.sort();
 	t.deepEqual(shadowedObjectKeys, shadowedProps, 'troublesome shadowed properties are keys of object literals');
+	t.end();
+});
+
+test('host objects constructor.prototype equal to themselves', { skip: typeof window === 'undefined' }, function (t) {
+	var keys, exception;
+	var blacklistedKeys = ['window', 'console', 'parent', 'self', 'frames'];
+	for (var k in window) {
+		keys = exception = void 0;
+		if (blacklistedKeys.indexOf(k) === -1 && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+			try {
+				keys = Object.keys(window[k]);
+			} catch (e) {
+				exception = e;
+			}
+			t.ok(Array.isArray(keys), 'keys is an array');
+			t.equal(exception, undefined, 'there is no exception');
+		}
+	}
 	t.end();
 });
