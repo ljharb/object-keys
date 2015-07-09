@@ -1,3 +1,9 @@
+1.0.6 / 2015-07-09
+=================
+  * [Fix] Use an object lookup rather than ES5's `indexOf` (#14)
+  * [Tests] ES3 browsers don't have `Array.isArray`
+  * [Tests] Fix `no-shadow` rule, as well as an IE 8 bug caused by engine NFE shadowing bugs.
+
 1.0.5 / 2015-07-03
 =================
   * [Fix] Fix a flabbergasting IE 8 bug where `localStorage.constructor.prototype === localStorage` throws
