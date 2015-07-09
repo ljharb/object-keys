@@ -211,7 +211,7 @@ test('host objects constructor.prototype equal to themselves', { skip: typeof wi
 			} catch (e) {
 				exception = e;
 			}
-			t.ok(Array.isArray(keys), 'keys is an array');
+			t.ok(is.array(keys), 'keys is an array');
 			t.equal(exception, undefined, 'there is no exception');
 		}
 	}
