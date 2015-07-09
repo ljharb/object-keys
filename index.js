@@ -20,12 +20,18 @@ var equalsConstructorPrototype = function (o) {
 	var ctor = o.constructor;
 	return ctor && ctor.prototype === o;
 };
-var blacklistedKeys = ['window', 'console', 'parent', 'self', 'frames'];
+var blacklistedKeys = {
+	$window: true,
+	$console: true,
+	$parent: true,
+	$self: true,
+	$frames: true
+};
 var hasAutomationEqualityBug = (function () {
 	/* global window */
 	if (typeof window === 'undefined') { return false; }
 	for (var k in window) {
-		if (blacklistedKeys.indexOf(k) === -1 && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+		if (!blacklistedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
 			try {
 				equalsConstructorPrototype(window[k]);
 			} catch (e) {

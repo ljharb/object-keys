@@ -205,7 +205,7 @@ test('host objects constructor.prototype equal to themselves', { skip: typeof wi
 	var blacklistedKeys = ['window', 'console', 'parent', 'self', 'frames'];
 	for (var k in window) {
 		keys = exception = void 0;
-		if (blacklistedKeys.indexOf(k) === -1 && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+		if (indexOf(blacklistedKeys, k) === -1 && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
 			try {
 				keys = Object.keys(window[k]);
 			} catch (e) {
