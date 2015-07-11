@@ -25,7 +25,9 @@ var blacklistedKeys = {
 	$console: true,
 	$parent: true,
 	$self: true,
-	$frames: true
+	$frames: true,
+	$webkitStorageInfo: true,
+	$webkitIndexedDB: true
 };
 var hasAutomationEqualityBug = (function () {
 	/* global window */
