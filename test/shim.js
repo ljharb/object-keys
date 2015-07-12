@@ -202,7 +202,7 @@ test('shadowed properties', function (t) {
 
 test('host objects constructor.prototype equal to themselves', { skip: typeof window === 'undefined' }, function (t) {
 	var keys, exception;
-	var blacklistedKeys = ['window', 'console', 'parent', 'self', 'frames', 'webkitStorageInfo', 'webkitIndexedDB'];
+	var blacklistedKeys = ['window', 'console', 'parent', 'self', 'frames', 'webkitIndexedDB', 'webkitStorageInfo'];
 	for (var k in window) {
 		keys = exception = void 0;
 		if (indexOf(blacklistedKeys, k) === -1 && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
