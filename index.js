@@ -44,7 +44,15 @@ var hasAutomationEqualityBug = (function () {
 	return false;
 }());
 var equalsConstructorPrototypeIfNotBuggy = function (o) {
-	return !hasAutomationEqualityBug && equalsConstructorPrototype(o);
+	/* global window */
+	if (typeof window === 'undefined' && !hasAutomationEqualityBug) {
+		return equalsConstructorPrototype(o);
+	}
+	try {
+		return equalsConstructorPrototype(o);
+	} catch (e) {
+		return false;
+	}
 };
 
 var keysShim = function keys(object) {
