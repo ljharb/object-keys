@@ -200,19 +200,28 @@ test('shadowed properties', function (t) {
 	t.end();
 });
 
-test('host objects constructor.prototype equal to themselves', { skip: typeof window === 'undefined' }, function (t) {
+test('host objects on `window` constructor.prototype equal to themselves', { skip: typeof window === 'undefined' }, function (t) {
 	var keys, exception;
-	var blacklistedKeys = ['window', 'console', 'parent', 'self', 'frames', 'webkitIndexedDB', 'webkitStorageInfo'];
+	var blacklistedKeys = {
+		$window: true,
+		$console: true,
+		$parent: true,
+		$self: true,
+		$frames: true,
+		$webkitIndexedDB: true,
+		$webkitStorageInfo: true
+	};
 	for (var k in window) {
-		keys = exception = void 0;
-		if (indexOf(blacklistedKeys, k) === -1 && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+		keys = undefined;
+		exception = undefined;
+		if (!blacklistedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
 			try {
 				keys = keysShim(window[k]);
 			} catch (e) {
 				exception = e;
 			}
-			t.ok(is.array(keys), 'keys is an array');
-			t.equal(exception, undefined, 'there is no exception');
+			t.ok(is.array(keys), 'keys of window["' + k + '"] is an array');
+			t.equal(exception, undefined, 'there is no exception: window["' + k + '"]');
 		}
 	}
 	t.end();
