@@ -45,7 +45,7 @@ var hasAutomationEqualityBug = (function () {
 }());
 var equalsConstructorPrototypeIfNotBuggy = function (o) {
 	/* global window */
-	if (typeof window === 'undefined' && !hasAutomationEqualityBug) {
+	if (typeof window === 'undefined' || !hasAutomationEqualityBug) {
 		return equalsConstructorPrototype(o);
 	}
 	try {
