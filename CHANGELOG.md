@@ -1,3 +1,10 @@
+1.0.7 / 2015-07-18
+=================
+  * [Fix] A proper fix for 176f03335e90d5c8d0d8125a99f27819c9b9cdad / https://github.com/es-shims/es5-shim/issues/275 that doesn't break dontEnum/constructor fixes in IE 8.
+  * [Fix] Remove deprecation message in Chrome by touching deprecated window properties (#15)
+  * [Tests] Improve test output for automation equality bugfix
+  * [Tests] Test on `io.js` `v2.4`
+
 1.0.6 / 2015-07-09
 =================
   * [Fix] Use an object lookup rather than ES5's `indexOf` (#14)
