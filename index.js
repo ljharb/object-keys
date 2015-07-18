@@ -43,6 +43,9 @@ var hasAutomationEqualityBug = (function () {
 	}
 	return false;
 }());
+var equalsConstructorPrototypeIfNotBuggy = function (o) {
+	return !hasAutomationEqualityBug && equalsConstructorPrototype(o);
+};
 
 var keysShim = function keys(object) {
 	var isObject = object !== null && typeof object === 'object';
@@ -75,7 +78,7 @@ var keysShim = function keys(object) {
 	}
 
 	if (hasDontEnumBug) {
-		var skipConstructor = hasAutomationEqualityBug || equalsConstructorPrototype(object);
+		var skipConstructor = equalsConstructorPrototypeIfNotBuggy(object);
 
 		for (var k = 0; k < dontEnums.length; ++k) {
 			if (!(skipConstructor && dontEnums[k] === 'constructor') && has.call(object, dontEnums[k])) {
