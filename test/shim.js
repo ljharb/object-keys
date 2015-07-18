@@ -1,4 +1,5 @@
 /* global window */
+'use strict';
 
 var test = require('tape');
 var is = require('is');
