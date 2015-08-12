@@ -57,7 +57,7 @@ Implementation taken directly from [es5-shim][es5-shim-url], with modifications,
 Simply clone the repo, `npm install`, and run `npm test`
 
 [package-url]: https://npmjs.org/package/object-keys
-[npm-version-svg]: http://vb.teelaun.ch/ljharb/object-keys.svg
+[npm-version-svg]: http://versionbadg.es/ljharb/object-keys.svg
 [travis-svg]: https://travis-ci.org/ljharb/object-keys.svg
 [travis-url]: https://travis-ci.org/ljharb/object-keys
 [deps-svg]: https://david-dm.org/ljharb/object-keys.svg
