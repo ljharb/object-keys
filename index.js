@@ -21,13 +21,13 @@ var equalsConstructorPrototype = function (o) {
 	return ctor && ctor.prototype === o;
 };
 var blacklistedKeys = {
-	$window: true,
 	$console: true,
+	$frames: true,
 	$parent: true,
 	$self: true,
-	$frames: true,
 	$webkitIndexedDB: true,
-	$webkitStorageInfo: true
+	$webkitStorageInfo: true,
+	$window: true
 };
 var hasAutomationEqualityBug = (function () {
 	/* global window */

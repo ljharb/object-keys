@@ -9,15 +9,15 @@ var has = Object.prototype.hasOwnProperty;
 var enumerable = Object.prototype.propertyIsEnumerable;
 
 var obj = {
-	str: 'boz',
-	obj: {},
+	aNull: null,
 	arr: [],
 	bool: true,
 	num: 42,
-	aNull: null,
+	obj: {},
+	str: 'boz',
 	undef: undefined
 };
-var objKeys = ['str', 'obj', 'arr', 'bool', 'num', 'aNull', 'undef'];
+var objKeys = ['aNull', 'arr', 'bool', 'num', 'obj', 'str', 'undef'];
 
 var noop = function () {};
 var preserve = function preserve(object, property, callback) {
@@ -204,13 +204,13 @@ test('shadowed properties', function (t) {
 test('host objects on `window` constructor.prototype equal to themselves', { skip: typeof window === 'undefined' }, function (t) {
 	var keys, exception;
 	var blacklistedKeys = {
-		$window: true,
 		$console: true,
+		$frames: true,
 		$parent: true,
 		$self: true,
-		$frames: true,
 		$webkitIndexedDB: true,
-		$webkitStorageInfo: true
+		$webkitStorageInfo: true,
+		$window: true
 	};
 	for (var k in window) {
 		keys = undefined;

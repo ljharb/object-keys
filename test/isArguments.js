@@ -8,8 +8,8 @@ test('is.arguments', function (t) {
 	(function () { t.ok(isArguments(arguments), 'arguments is arguments'); }());
 	(function () { t.notOk(isArguments(Array.prototype.slice.call(arguments)), 'sliced arguments is not arguments'); }());
 	var fakeOldArguments = {
-		length: 3,
-		callee: function () {}
+		callee: function () {},
+		length: 3
 	};
 	t.ok(isArguments(fakeOldArguments), 'old-style arguments is arguments');
 	t.end();
