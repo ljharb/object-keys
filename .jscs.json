@@ -118,6 +118,8 @@
 
 	"disallowArrowFunctions": true,
 
+	"disallowMultiLineTernary": true,
+
 	"validateOrderInObjectKeys": "asc-insensitive"
 }
 

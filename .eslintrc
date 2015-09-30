@@ -10,6 +10,7 @@
 		"max-statements": [2, 23],
 		"no-extra-parens": [1],
 		"no-invalid-this": [1],
+		"no-restricted-syntax": [2, "BreakStatement", "ContinueStatement", "LabeledStatement", "WithStatement"],
 		"operator-linebreak": [2, "after"]
 	}
 }
