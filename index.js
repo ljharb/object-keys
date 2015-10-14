@@ -103,9 +103,7 @@ var keysShim = function keys(object) {
 };
 
 keysShim.shim = function shimObjectKeys() {
-	if (!Object.keys) {
-		Object.keys = keysShim;
-	} else {
+	if (Object.keys) {
 		var keysWorksWithArguments = (function () {
 			// Safari 5.0 bug
 			return (Object.keys(arguments) || '').length === 2;
@@ -120,6 +118,8 @@ keysShim.shim = function shimObjectKeys() {
 				}
 			};
 		}
+	} else {
+		Object.keys = keysShim;
 	}
 	return Object.keys || keysShim;
 };
