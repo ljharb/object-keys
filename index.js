@@ -34,12 +34,16 @@ var hasAutomationEqualityBug = (function () {
 	/* global window */
 	if (typeof window === 'undefined') { return false; }
 	for (var k in window) {
-		if (!blacklistedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
-			try {
-				equalsConstructorPrototype(window[k]);
-			} catch (e) {
-				return true;
+		try {
+			if (!blacklistedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+				try {
+					equalsConstructorPrototype(window[k]);
+				} catch (e) {
+					return true;
+				}
 			}
+		} catch (e) {
+			return true;
 		}
 	}
 	return false;
