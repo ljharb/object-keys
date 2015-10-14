@@ -22,6 +22,7 @@ var equalsConstructorPrototype = function (o) {
 };
 var blacklistedKeys = {
 	$console: true,
+	$frameElement: true,
 	$frames: true,
 	$parent: true,
 	$self: true,
