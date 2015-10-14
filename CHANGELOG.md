@@ -1,3 +1,11 @@
+1.0.8 / 2015-10-14
+=================
+  * [Fix] wrap automation equality bug checking in try/catch, per [es5-shim#327](https://github.com/es-shims/es5-shim/issues/327)
+  * [Fix] Blacklist 'window.frameElement' per [es5-shim#322](https://github.com/es-shims/es5-shim/issues/322)
+  * [Docs] Switch from vb.teelaun.ch to versionbadg.es for the npm version badge SVG
+  * [Tests] up to `io.js` `v3.3`, `node` `v4.2`
+  * [Dev Deps] update `eslint`, `tape`, `@ljharb/eslint-config`, `jscs`
+
 1.0.7 / 2015-07-18
 =================
   * [Fix] A proper fix for 176f03335e90d5c8d0d8125a99f27819c9b9cdad / https://github.com/es-shims/es5-shim/issues/275 that doesn't break dontEnum/constructor fixes in IE 8.
