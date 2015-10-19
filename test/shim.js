@@ -205,6 +205,7 @@ test('host objects on `window` constructor.prototype equal to themselves', { ski
 	var keys, exception;
 	var blacklistedKeys = {
 		$console: true,
+		$frame: true,
 		$frameElement: true,
 		$frames: true,
 		$parent: true,
