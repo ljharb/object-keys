@@ -1,7 +1,11 @@
 {
 	"name": "object-keys",
 	"version": "1.0.8",
-	"author": "Jordan Harband",
+	"author": {
+		"name": "Jordan Harband",
+		"email": "ljharb@gmail.com",
+		"url": "http://ljharb.codes"
+	},
 	"description": "An Object.keys replacement, in case Object.keys is not available. From https://github.com/es-shims/es5-shim",
 	"license": "MIT",
 	"main": "index.js",
