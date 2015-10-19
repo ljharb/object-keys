@@ -6,6 +6,29 @@
 		"email": "ljharb@gmail.com",
 		"url": "http://ljharb.codes"
 	},
+	"contributors": [
+		{
+			"name": "Jordan Harband",
+			"email": "ljharb@gmail.com",
+			"url": "http://ljharb.codes"
+		},
+		{
+			"name": "Raynos",
+			"email": "raynos2@gmail.com"
+		},
+		{
+			"name": "Nathan Rajlich",
+			"email": "nathan@tootallnate.net"
+		},
+		{
+			"name": "Ivan Starkov",
+			"email": "istarkov@gmail.com"
+		},
+		{
+			"name": "Gary Katsevman",
+			"email": "git@gkatsev.com"
+		}
+	],
 	"description": "An Object.keys replacement, in case Object.keys is not available. From https://github.com/es-shims/es5-shim",
 	"license": "MIT",
 	"main": "index.js",
