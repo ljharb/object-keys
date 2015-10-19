@@ -1,3 +1,8 @@
+1.0.9 / 2015-10-19
+=================
+  * [Fix] Blacklist 'frame' property on window (#16, #17)
+  * [Dev Deps] update `jscs`, `eslint`, `@ljharb/eslint-config`
+
 1.0.8 / 2015-10-14
 =================
   * [Fix] wrap automation equality bug checking in try/catch, per [es5-shim#327](https://github.com/es-shims/es5-shim/issues/327)
