@@ -40,7 +40,7 @@
 		"jscs": "jscs test/*.js *.js",
 		"eslint": "eslint test/*.js *.js",
 		"eccheck": "editorconfig-tools check *.js **/*.js > /dev/null",
-		"security": "nsp package"
+		"security": "nsp check"
 	},
 	"repository": {
 		"type": "git",
@@ -56,14 +56,14 @@
 	"devDependencies": {
 		"foreach": "^2.0.5",
 		"is": "^3.1.0",
-		"tape": "^4.2.1",
+		"tape": "^4.2.2",
 		"indexof": "^0.0.1",
 		"covert": "^1.1.0",
-		"jscs": "^2.3.4",
+		"jscs": "^2.6.0",
 		"editorconfig-tools": "^0.1.1",
-		"nsp": "^1.1.0",
-		"eslint": "^1.7.2",
-		"@ljharb/eslint-config": "^1.4.1"
+		"nsp": "^2.1.0",
+		"eslint": "^1.10.3",
+		"@ljharb/eslint-config": "^1.6.0"
 	},
 	"testling": {
 		"files": "test/index.js",
