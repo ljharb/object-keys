@@ -128,7 +128,8 @@ test('returns names which are own properties', function (t) {
 });
 
 test('returns names which are enumerable', function (t) {
-	var k, loopedValues = [];
+	var k;
+	var loopedValues = [];
 	for (k in obj) {
 		if (enumerable.call(obj, k)) {
 			loopedValues.push(k);
