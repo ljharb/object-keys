@@ -42,7 +42,6 @@
 		"lint": "npm run --silent jscs && npm run --silent eslint",
 		"jscs": "jscs test/*.js *.js",
 		"eslint": "eslint test/*.js *.js",
-		"eccheck": "editorconfig-tools check *.js **/*.js > /dev/null",
 		"security": "nsp check"
 	},
 	"repository": {
@@ -63,7 +62,6 @@
 		"indexof": "^0.0.1",
 		"covert": "^1.1.0",
 		"jscs": "^2.11.0",
-		"editorconfig-tools": "^0.1.1",
 		"nsp": "^2.2.2",
 		"eslint": "^2.5.3",
 		"@ljharb/eslint-config": "^2.2.0"
