@@ -21,7 +21,7 @@ var equalsConstructorPrototype = function (o) {
 	var ctor = o.constructor;
 	return ctor && ctor.prototype === o;
 };
-var blacklistedKeys = {
+var excludedKeys = {
 	$console: true,
 	$external: true,
 	$frame: true,
@@ -38,7 +38,7 @@ var hasAutomationEqualityBug = (function () {
 	if (typeof window === 'undefined') { return false; }
 	for (var k in window) {
 		try {
-			if (!blacklistedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+			if (!excludedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
 				try {
 					equalsConstructorPrototype(window[k]);
 				} catch (e) {

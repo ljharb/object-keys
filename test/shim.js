@@ -204,7 +204,7 @@ test('shadowed properties', function (t) {
 
 test('host objects on `window` constructor.prototype equal to themselves', { skip: typeof window === 'undefined' }, function (t) {
 	var keys, exception;
-	var blacklistedKeys = {
+	var excludedKeys = {
 		$console: true,
 		$external: true,
 		$frame: true,
@@ -219,7 +219,7 @@ test('host objects on `window` constructor.prototype equal to themselves', { ski
 	for (var k in window) {
 		keys = undefined;
 		exception = undefined;
-		if (!blacklistedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
+		if (!excludedKeys['$' + k] && has.call(window, k) && window[k] !== null && typeof window[k] === 'object') {
 			try {
 				keys = keysShim(window[k]);
 			} catch (e) {
