@@ -27,10 +27,12 @@ var excludedKeys = {
 	$frame: true,
 	$frameElement: true,
 	$frames: true,
+	$height: true,
 	$parent: true,
 	$self: true,
 	$webkitIndexedDB: true,
 	$webkitStorageInfo: true,
+	$width: true,
 	$window: true
 };
 var hasAutomationEqualityBug = (function () {

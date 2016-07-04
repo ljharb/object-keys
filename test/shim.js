@@ -210,10 +210,12 @@ test('host objects on `window` constructor.prototype equal to themselves', { ski
 		$frame: true,
 		$frameElement: true,
 		$frames: true,
+		$height: true,
 		$parent: true,
 		$self: true,
 		$webkitIndexedDB: true,
 		$webkitStorageInfo: true,
+		$width: true,
 		$window: true
 	};
 	for (var k in window) {
