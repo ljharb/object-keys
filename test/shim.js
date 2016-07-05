@@ -210,12 +210,20 @@ test('host objects on `window` constructor.prototype equal to themselves', { ski
 		$frame: true,
 		$frameElement: true,
 		$frames: true,
-		$height: true,
+		$innerHeight: true,
+		$innerWidth: true,
+		$outerHeight: true,
+		$outerWidth: true,
+		$pageXOffset: true,
+		$pageYOffset: true,
 		$parent: true,
+		$scrollLeft: true,
+		$scrollTop: true,
+		$scrollX: true,
+		$scrollY: true,
 		$self: true,
 		$webkitIndexedDB: true,
 		$webkitStorageInfo: true,
-		$width: true,
 		$window: true
 	};
 	for (var k in window) {
