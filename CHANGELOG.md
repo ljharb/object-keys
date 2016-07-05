@@ -1,3 +1,7 @@
+1.0.11 / 2016-07-05
+=================
+  * [Fix] exclude keys regarding the style (eg. `pageYOffset`) on `window` to avoid reflow (#32)
+
 1.0.10 / 2016-07-04
 =================
   * [Fix] exclude `height` and `width` keys on `window` to avoid reflow (#31)
