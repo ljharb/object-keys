@@ -57,14 +57,14 @@
 	"dependencies": {},
 	"devDependencies": {
 		"foreach": "^2.0.5",
-		"is": "^3.1.0",
-		"tape": "^4.6.0",
+		"is": "^3.2.0",
+		"tape": "^4.6.2",
 		"indexof": "^0.0.1",
 		"covert": "^1.1.0",
 		"jscs": "^3.0.7",
-		"nsp": "^2.6.1",
-		"eslint": "^3.3.1",
-		"@ljharb/eslint-config": "^7.0.0"
+		"nsp": "^2.6.2",
+		"eslint": "^3.9.1",
+		"@ljharb/eslint-config": "^8.0.0"
 	},
 	"testling": {
 		"files": "test/index.js",
