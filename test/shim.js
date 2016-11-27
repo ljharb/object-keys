@@ -1,4 +1,5 @@
 /* global window */
+
 'use strict';
 
 var test = require('tape');
@@ -20,7 +21,7 @@ var obj = {
 var objKeys = ['aNull', 'arr', 'bool', 'num', 'obj', 'str', 'undef'];
 
 var noop = function () {};
-var preserve = function preserve(object, property, callback) {
+var preserve = function preserveProperty(object, property, callback) {
 	return function preserved() {
 		var original = object[property];
 		try {
@@ -55,7 +56,7 @@ test('exports a "shim" function', function (t) {
 
 	t.test('when Object.keys has arguments bug', preserve(Object, 'keys', function (st) {
 		var originalObjectKeys = Object.keys;
-		Object.keys = function keys(object) {
+		Object.keys = function keys(object) { // eslint-disable-line func-name-matching
 			if (is.args(object)) { return []; }
 			return originalObjectKeys(object);
 		};
