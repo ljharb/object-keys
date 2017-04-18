@@ -1,2 +1,5 @@
 test/*
-
+.editorconfig
+.eslintrc
+.jscs.json
+.travis.yml
