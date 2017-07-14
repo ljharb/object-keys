@@ -56,15 +56,15 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"foreach": "^2.0.5",
-		"is": "^3.2.1",
-		"tape": "^4.6.3",
-		"indexof": "^0.0.1",
+		"@ljharb/eslint-config": "^12.1.0",
 		"covert": "^1.1.0",
+		"eslint": "^4.2.0",
+		"foreach": "^2.0.5",
+		"indexof": "^0.0.1",
+		"is": "^3.2.1",
 		"jscs": "^3.0.7",
 		"nsp": "^2.6.3",
-		"eslint": "^3.19.0",
-		"@ljharb/eslint-config": "^11.0.0"
+		"tape": "^4.7.0"
 	},
 	"testling": {
 		"files": "test/index.js",
@@ -88,4 +88,3 @@
 		"node": ">= 0.4"
 	}
 }
-
