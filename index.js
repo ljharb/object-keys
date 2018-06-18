@@ -44,7 +44,16 @@ var excludedKeys = {
 	$webkitStorageInfo: true,
 	$window: true
 };
+var isChromeExtension = (function () {
+	/* global chrome */
+	return (typeof chrome !== 'undefined') &&
+		(typeof chrome.runtime !== 'undefined') &&
+		(typeof chrome.runtime.id !== 'undefined');
+}());
 var hasAutomationEqualityBug = (function () {
+	if (isChromeExtension) {
+		return false;
+	}
 	/* global window */
 	if (typeof window === 'undefined') { return false; }
 	for (var k in window) {
