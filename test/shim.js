@@ -206,6 +206,7 @@ test('shadowed properties', function (t) {
 test('host objects on `window` constructor.prototype equal to themselves', { skip: typeof window === 'undefined' }, function (t) {
 	var keys, exception;
 	var excludedKeys = {
+		$applicationCache: true,
 		$console: true,
 		$external: true,
 		$frame: true,
