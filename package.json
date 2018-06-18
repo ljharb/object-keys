@@ -64,7 +64,7 @@
 		"is": "^3.2.1",
 		"jscs": "^3.0.7",
 		"nsp": "^3.2.1",
-		"tape": "^4.9.0"
+		"tape": "^4.9.1"
 	},
 	"testling": {
 		"files": "test/index.js",
