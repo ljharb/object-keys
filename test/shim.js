@@ -20,7 +20,7 @@ var obj = {
 };
 var objKeys = ['aNull', 'arr', 'bool', 'num', 'obj', 'str', 'undef'];
 
-var noop = function () {};
+var returnEmptyArray = function () { return []; };
 var preserve = function preserveProperty(object, property, callback) {
 	return function preserved() {
 		var original = object[property];
@@ -28,6 +28,8 @@ var preserve = function preserveProperty(object, property, callback) {
 			return callback.apply(this, arguments);
 		} finally {
 			object[property] = original;
+			// eslint-disable-next-line no-unsafe-finally
+			if (object[property] !== original) { throw new EvalError('should never happen'); }
 		}
 	};
 };
@@ -36,32 +38,37 @@ test('exports a "shim" function', function (t) {
 	t.equal(typeof keysShim.shim, 'function', 'keysShim.shim is a function');
 
 	t.test('when Object.keys is present', preserve(Object, 'keys', function (st) {
-		Object.keys = noop;
-		st.equal(Object.keys, noop, 'Object.keys has been replaced');
+		Object.keys = returnEmptyArray;
+		st.equal(Object.keys, returnEmptyArray, 'Object.keys has been replaced');
 		var shimmedKeys = keysShim.shim();
-		st.notEqual(Object.keys, keysShim, 'Object.keys is not overridden');
+		st.notEqual(Object.keys, keysShim, 'Object.keys is not overridden to the shim');
+		st.notEqual(Object.keys, returnEmptyArray, 'Object.keys is overridden, is not returnEmptyArray');
 		st.equal(shimmedKeys, Object.keys, 'Object.keys is returned');
 		st.end();
 	}));
 
-	t.test('when Object.keys is not present', preserve(Object, 'keys', function (st) {
-		Object.keys = undefined;
-		delete Object.keys;
-		st.notOk(Object.keys, 'Object.keys has been deleted');
+	t.test('when Object.keys is not present', { skip: Object.keys }, preserve(Object, 'keys', function (st) {
+		st.notOk(Object.keys, 'Object.keys does not exist');
 		var shimmedKeys = keysShim.shim();
+
 		st.equal(Object.keys, keysShim, 'Object.keys is overridden');
 		st.equal(shimmedKeys, keysShim, 'shim is returned');
+
 		st.end();
 	}));
 
 	t.test('when Object.keys has arguments bug', preserve(Object, 'keys', function (st) {
+		st.deepEqual(arguments.length, 1, 'arguments has expected length');
+
 		var originalObjectKeys = Object.keys;
-		Object.keys = function keys(object) { // eslint-disable-line func-name-matching
+		var fakeKeys = function keys(object) {
 			if (is.args(object)) { return []; }
 			return originalObjectKeys(object);
 		};
-		st.notDeepEqual(Object.keys(arguments), ['0'], 'Object.keys has arguments bug');
+		Object.keys = fakeKeys;
+		st.deepEqual(Object.keys(arguments), [], 'Object.keys has arguments bug');
 		var shimmedKeys = keysShim.shim();
+		st.notEqual(fakeKeys, shimmedKeys, 'Object.keys is not original fake value');
 		st.equal(Object.keys, shimmedKeys, 'Object.keys is overridden');
 		st.deepEqual(Object.keys(arguments), ['0'], 'Object.keys now works with arguments');
 		st.end();
@@ -145,7 +152,7 @@ test('returns names which are enumerable', function (t) {
 
 test('throws an error for a non-object', function (t) {
 	t['throws'](
-		function () { return keysShim(42); },
+		function () { return keysShim(null); },
 		new TypeError('Object.keys called on a non-object'),
 		'throws on a non-object'
 	);

@@ -2,6 +2,7 @@
 	"rules": {
 		"array-bracket-newline": 0,
 		"array-element-newline": 0,
+		"max-nested-callbacks": 0,
 		"no-magic-numbers": 0,
 	}
 }
