@@ -3,7 +3,8 @@
 var slice = Array.prototype.slice;
 var isArgs = require('./isArguments');
 
-var keysShim = require('./implementation');
+var origKeys = Object.keys;
+var keysShim = origKeys ? function keys(o) { return origKeys(o); } : require('./implementation');
 
 var originalKeys = Object.keys;
 

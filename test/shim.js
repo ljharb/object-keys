@@ -4,7 +4,14 @@
 
 var test = require('tape');
 var is = require('is');
-var keysShim = require('../index.js');
+var keysShim;
+var reRequire = function reRequireImplementation() {
+	delete require.cache[require.resolve('../implementation')];
+	delete require.cache[require.resolve('../')];
+	keysShim = require('../'); // eslint-disable-line global-require
+};
+reRequire();
+
 var indexOf = require('indexof');
 var has = Object.prototype.hasOwnProperty;
 var enumerable = Object.prototype.propertyIsEnumerable;
@@ -22,6 +29,7 @@ var objKeys = ['aNull', 'arr', 'bool', 'num', 'obj', 'str', 'undef'];
 
 var returnEmptyArray = function () { return []; };
 var preserve = function preserveProperty(object, property, callback) {
+	reRequire();
 	return function preserved() {
 		var original = object[property];
 		try {
@@ -30,6 +38,7 @@ var preserve = function preserveProperty(object, property, callback) {
 			object[property] = original;
 			// eslint-disable-next-line no-unsafe-finally
 			if (object[property] !== original) { throw new EvalError('should never happen'); }
+			reRequire();
 		}
 	};
 };
