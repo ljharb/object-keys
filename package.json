@@ -35,14 +35,11 @@
 	"scripts": {
 		"pretest": "npm run --silent lint",
 		"test": "npm run --silent tests-only",
-		"posttest": "npm run --silent audit",
+		"posttest": "npx aud",
 		"tests-only": "node test/index.js",
 		"coverage": "covert test/*.js",
 		"coverage-quiet": "covert test/*.js --quiet",
-		"lint": "eslint .",
-		"preaudit": "npm install --package-lock --package-lock-only",
-		"audit": "npm audit",
-		"postaudit": "rm package-lock.json"
+		"lint": "eslint ."
 	},
 	"repository": {
 		"type": "git",
