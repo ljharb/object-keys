@@ -1,5 +1,7 @@
 'use strict';
 
+/* global window */
+
 var keysShim;
 if (!Object.keys) {
 	// modified from https://github.com/es-shims/es5-shim
@@ -48,7 +50,6 @@ if (!Object.keys) {
 		$window: true
 	};
 	var hasAutomationEqualityBug = (function () {
-		/* global window */
 		if (typeof window === 'undefined') { return false; }
 		for (var k in window) {
 			try {
@@ -66,7 +67,6 @@ if (!Object.keys) {
 		return false;
 	}());
 	var equalsConstructorPrototypeIfNotBuggy = function (o) {
-		/* global window */
 		if (typeof window === 'undefined' || !hasAutomationEqualityBug) {
 			return equalsConstructorPrototype(o);
 		}
