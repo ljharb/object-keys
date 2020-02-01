@@ -161,9 +161,15 @@ test('returns names which are enumerable', function (t) {
 });
 
 test('throws an error for a non-object', function (t) {
+	var expectedError;
+	try {
+		Object(null);
+	} catch (e) {
+		expectedError = e;
+	}
 	t['throws'](
 		function () { return keysShim(null); },
-		new TypeError('Object.keys called on a non-object'),
+		expectedError,
 		'throws on a non-object'
 	);
 	t.end();
