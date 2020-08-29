@@ -37,12 +37,11 @@
 	"main": "index.js",
 	"scripts": {
 		"prepublish": "safe-publish-latest",
-		"pretest": "npm run --silent lint",
-		"test": "npm run --silent tests-only",
-		"posttest": "npx aud",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only",
+		"posttest": "aud --production",
 		"tests-only": "node test",
 		"coverage": "covert test/*.js",
-		"coverage-quiet": "covert test/*.js --quiet",
 		"lint": "eslint ."
 	},
 	"repository": {
@@ -57,14 +56,15 @@
 	],
 	"dependencies": {},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^16.0.0",
+		"@ljharb/eslint-config": "^17.2.0",
+		"aud": "^1.1.2",
 		"covert": "^1.1.1",
-		"eslint": "^6.8.0",
+		"eslint": "^7.7.0",
 		"foreach": "^2.0.5",
 		"indexof": "^0.0.1",
 		"is": "^3.3.0",
 		"safe-publish-latest": "^1.1.4",
-		"tape": "^5.0.0-next.4"
+		"tape": "^5.0.1"
 	},
 	"testling": {
 		"files": "test/index.js",
