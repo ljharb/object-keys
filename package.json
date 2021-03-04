@@ -54,17 +54,16 @@
 		"ES5",
 		"shim"
 	],
-	"dependencies": {},
 	"devDependencies": {
-		"@ljharb/eslint-config": "^17.2.0",
-		"aud": "^1.1.2",
+		"@ljharb/eslint-config": "^17.5.1",
+		"aud": "^1.1.4",
 		"covert": "^1.1.1",
-		"eslint": "^7.7.0",
+		"eslint": "^7.21.0",
 		"foreach": "^2.0.5",
 		"indexof": "^0.0.1",
 		"is": "^3.3.0",
 		"safe-publish-latest": "^1.1.4",
-		"tape": "^5.0.1"
+		"tape": "^5.2.2"
 	},
 	"testling": {
 		"files": "test/index.js",
