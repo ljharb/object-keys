@@ -6,8 +6,6 @@ var isArgs = require('./isArguments');
 var origKeys = Object.keys;
 var keysShim = origKeys ? function keys(o) { return origKeys(o); } : require('./implementation');
 
-var originalKeys = Object.keys;
-
 keysShim.shim = function shimObjectKeys() {
 	if (Object.keys) {
 		var keysWorksWithArguments = (function () {
@@ -18,9 +16,9 @@ keysShim.shim = function shimObjectKeys() {
 		if (!keysWorksWithArguments) {
 			Object.keys = function keys(object) { // eslint-disable-line func-name-matching
 				if (isArgs(object)) {
-					return originalKeys(slice.call(object));
+					return origKeys(slice.call(object));
 				}
-				return originalKeys(object);
+				return origKeys(object);
 			};
 		}
 	} else {
