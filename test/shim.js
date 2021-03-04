@@ -28,26 +28,24 @@ var obj = {
 var objKeys = ['aNull', 'arr', 'bool', 'num', 'obj', 'str', 'undef'];
 
 var returnEmptyArray = function () { return []; };
-var preserve = function preserveProperty(object, property, callback) {
+var preserve = function preserveProperty(object, property) {
 	reRequire();
-	return function preserved() {
-		var original = object[property];
-		try {
-			return callback.apply(this, arguments);
-		} finally {
-			// eslint-disable-next-line no-param-reassign
-			object[property] = original;
-			// eslint-disable-next-line no-unsafe-finally
-			if (object[property] !== original) { throw new EvalError('should never happen'); }
-			reRequire();
-		}
+	var original = object[property];
+	return function restorePreserved() {
+		// eslint-disable-next-line no-param-reassign
+		object[property] = original;
+		// eslint-disable-next-line no-unsafe-finally
+		if (object[property] !== original) { throw new EvalError('should never happen'); }
+		reRequire();
 	};
 };
 
 test('exports a "shim" function', function (t) {
 	t.equal(typeof keysShim.shim, 'function', 'keysShim.shim is a function');
 
-	t.test('when Object.keys is present', preserve(Object, 'keys', function (st) {
+	t.test('when Object.keys is present', function (st) {
+		st.teardown(preserve(Object, 'keys'));
+
 		Object.keys = returnEmptyArray;
 		st.equal(Object.keys, returnEmptyArray, 'Object.keys has been replaced');
 		var shimmedKeys = keysShim.shim();
@@ -55,9 +53,11 @@ test('exports a "shim" function', function (t) {
 		st.notEqual(Object.keys, returnEmptyArray, 'Object.keys is overridden, is not returnEmptyArray');
 		st.equal(shimmedKeys, Object.keys, 'Object.keys is returned');
 		st.end();
-	}));
+	});
 
-	t.test('when Object.keys is not present', { skip: Object.keys }, preserve(Object, 'keys', function (st) {
+	t.test('when Object.keys is not present', { skip: Object.keys }, function (st) {
+		st.teardown(preserve(Object, 'keys'));
+
 		st.notOk(Object.keys, 'Object.keys does not exist');
 		var shimmedKeys = keysShim.shim();
 
@@ -65,9 +65,11 @@ test('exports a "shim" function', function (t) {
 		st.equal(shimmedKeys, keysShim, 'shim is returned');
 
 		st.end();
-	}));
+	});
 
-	t.test('when Object.keys has arguments bug', preserve(Object, 'keys', function (st) {
+	t.test('when Object.keys has arguments bug', function (st) {
+		st.teardown(preserve(Object, 'keys'));
+
 		st.deepEqual(arguments.length, 1, 'arguments has expected length');
 
 		var originalObjectKeys = Object.keys;
@@ -82,7 +84,7 @@ test('exports a "shim" function', function (t) {
 		st.equal(Object.keys, shimmedKeys, 'Object.keys is overridden');
 		st.deepEqual(Object.keys(arguments), ['0'], 'Object.keys now works with arguments');
 		st.end();
-	}));
+	});
 
 	t.end();
 });
