@@ -54,9 +54,9 @@
 		"shim"
 	],
 	"devDependencies": {
-		"@ljharb/eslint-config": "^17.5.1",
-		"aud": "^1.1.4",
-		"eslint": "^7.21.0",
+		"@ljharb/eslint-config": "^17.6.0",
+		"aud": "^1.1.5",
+		"eslint": "^7.27.0",
 		"foreach": "^2.0.5",
 		"indexof": "^0.0.1",
 		"is": "^3.3.0",

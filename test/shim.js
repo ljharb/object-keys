@@ -34,7 +34,6 @@ var preserve = function preserveProperty(object, property) {
 	return function restorePreserved() {
 		// eslint-disable-next-line no-param-reassign
 		object[property] = original;
-		// eslint-disable-next-line no-unsafe-finally
 		if (object[property] !== original) { throw new EvalError('should never happen'); }
 		reRequire();
 	};
