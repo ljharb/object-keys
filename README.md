@@ -70,5 +70,5 @@ Simply clone the repo, `npm install`, and run `npm test`
 [downloads-url]: https://npm-stat.com/charts.html?package=object-keys
 [codecov-image]: https://codecov.io/gh/ljharb/object-keys/branch/main/graphs/badge.svg
 [codecov-url]: https://app.codecov.io/gh/ljharb/object-keys/
-[actions-image]: https://img.shields.io/endpoint?url=https://github-actions-badge-u3jn4tfpocch.runkit.sh/ljharb/object-keys
+[actions-image]: https://img.shields.io/github/check-runs/ljharb/object-keys/main
 [actions-url]: https://github.com/ljharb/object-keys/actions
